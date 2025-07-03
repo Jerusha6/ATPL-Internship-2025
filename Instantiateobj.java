@@ -50,6 +50,5 @@ class Instantiateobj{
     // ob3.applyDefDiscount(price);
     // ob4.applyDiscount(price,dis);
     sc.close();
-
     }
 }
