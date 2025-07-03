@@ -31,6 +31,8 @@ class Book{
 class Instantiateobj{
     public static void main(String[] args){
     Scanner sc = new Scanner(System.in);
+    Book ob1 = new Book("Learn about aaslin technologies", "DANTULURI VARAHA VENKATA SEETHARAMA RAJU", 1499.0d); //to apply 15% default discount
+    Book ob2 = new Book("Java Programming", "James Gosling", 1500.0d,  20); //to apply entered discount
     // String title;
     // String author;
     // double price;
@@ -43,12 +45,10 @@ class Instantiateobj{
     // price = sc.nextDouble();
     // System.out.println("Enter the discount of the book: ");
     // dis = sc.nextInt();
-    // Book ob2 = new Book(title, author, price); //to apply 15% default discount
-    Book ob1 = new Book("Learn about aaslin technologies", "DANTULURI VARAHA VENKATA SEETHARAMA RAJU", 1499.0d); //to apply 15% default discount
+    // Book ob3 = new Book(title, author, price); //to apply 15% default discount
     // Book ob4 = new Book(title, author, price, dis); //to apply entered discount
-    Book ob3 = new Book("Java Programming", "James Gosling", 1500.0d,  20); //to apply entered discount
-    // ob1.applyDefDiscount(price);
-    // ob3.applyDiscount(price,dis);
+    // ob3.applyDefDiscount(price);
+    // ob4.applyDiscount(price,dis);
     sc.close();
 
     }
