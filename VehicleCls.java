@@ -1,3 +1,6 @@
+// Create a Vehicle class and extend it with Bike and Car classes. Override a
+// method like start() in each subclass.
+
 class Vehicle{
 void start(){
     System.out.println("Vehicle is starting");
