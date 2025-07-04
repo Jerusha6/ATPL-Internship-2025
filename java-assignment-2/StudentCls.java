@@ -16,12 +16,12 @@ class Student {
 public class StudentCls {
     public static void main(String[] args) {
         Student s1 = new Student(1, "Anand");
-        Student.schoolName = "Green Valley High";
+        Student.schoolName = "Oxford University";
         Student s2 = new Student(2, "Roja");
         System.out.println("Before changing school name:");
         s1.display();
         s2.display();
-        s1.schoolName = "Blue Ridge Academy";
+        s1.schoolName = "Delhi public school";
         System.out.println("\nAfter changing school name:");
         s1.display();
         s2.display();
