@@ -16,7 +16,7 @@ class Invoice implements Pritable{
         System.out.println("Invoice is being printing..");
     }
 }
-class PrintableCls {
+class PrintableInterface {
     public static void main(String[] args) {
         Document ob1 = new Document();
         ob1.getPrint();
