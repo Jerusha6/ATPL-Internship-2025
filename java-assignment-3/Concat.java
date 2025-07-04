@@ -27,6 +27,7 @@ public class Concat {
         long executionTime=endingTime-startingTime;
 
         System.out.println("Execution TIme is "+executionTime+" NanoSeconds");
+        sc.close();
 
     }
 }
