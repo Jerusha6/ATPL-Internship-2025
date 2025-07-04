@@ -16,5 +16,6 @@ class String_input{
         StringBuilder sd = new StringBuilder(name);
         sd.reverse();
         System.out.println("After reversing the String with StringBuffer: "+sd.toString());
+        sc.close();
     }
 }
