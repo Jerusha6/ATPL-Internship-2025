@@ -1,31 +1,36 @@
 import java.util.Scanner;
 
 class LoginFailedException extends Exception{
-    String username="Jerusha6";
-    String pass="Secret";
+   
 public LoginFailedException(String msg){
-    super(msg);
-    
+    super(msg);   
 }
-void login(String username, String pass){
-if((this.username).equals(username) || (this.pass).equals(pass)){
-System.out.println("Login successful..");
-}
-}
+
 }
 class CustomExc {
+
+    static String username="Jerusha6";
+    static String pass="Secret";
+
+    public static void login(String uname, String password) throws LoginFailedException{
+        if((username).equals(uname) && (pass).equals(password)){
+        System.out.println("Login successful..");
+        }
+        else{
+            throw new LoginFailedException("Invalid login details"); 
+        }
+        }
 public static void main(String[] args) {
-    LoginFailedException ob;
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter username: ");
-    String username = sc.nextLine();
+    String username = sc.nextLine().trim();
     System.out.println("Enter password: ");
-    String pass = sc.nextLine();
+    String pass = sc.nextLine().trim();
     try{
-        ob.login(username,pass);
-        throw new LoginFailedException("Invalid login details");       
+        login(username,pass);
+              
     }catch(LoginFailedException le){
-        System.out.println("Username or Password does not match! Please enter a valid username and password..");
+        System.out.println(le.getMessage()+" Username or Password does not match! Please enter a valid username and password..");
     }
 }    
 }
