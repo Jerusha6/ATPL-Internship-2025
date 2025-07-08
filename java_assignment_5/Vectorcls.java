@@ -1,5 +1,6 @@
 import java.util.Vector;
 import java.util.Scanner;
+import java.util.Enumeration;
 class Vectorcls {
 public static void main(String[] args){
     Vector<Double> v = new Vector<>();
@@ -12,8 +13,12 @@ public static void main(String[] args){
         System.out.println("Here are the 4 elements you add to vector: ");
         System.out.println("Vector: " + v); 
         
-        System.out.println("\nHere is the updated list after applying pop operation to remove 2 elements from the stack: ");
-        System.out.println("Vector: " + v);  
+        System.out.println("Iteration using Enumeration.");
+
+        Enumeration<Double> en = v.elements();
+        while(en.hasMoreElements()){
+            System.out.println(en.nextElement());
+        }
     }
 }
 }
