@@ -14,7 +14,7 @@ public static void main(String[] args){
         System.out.println("Stack: " + st); 
         st.pop();
         st.pop();
-        System.out.println("\nHere is the updated list after applying pop operation to remove 2 names from the stack: ");
+        System.out.println("\nHere is the updated stack after applying pop operation to remove 2 names from the stack: ");
         System.out.println("Stack: " + st);  
         System.out.println("\nHere last entered names popped");
     }
