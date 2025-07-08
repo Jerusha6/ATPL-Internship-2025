@@ -13,7 +13,6 @@ public static void main(String[] args){
     st.pop();
     st.pop();
     System.out.println("\nHere is the updated list after applying pop operation to remove 2 elements from the stack: ");
-    System.out.println("Stack: " + st); 
-    
+    System.out.println("Stack: " + st);  
 }
 }
