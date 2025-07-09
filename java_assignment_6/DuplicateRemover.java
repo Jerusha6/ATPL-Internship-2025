@@ -1,5 +1,6 @@
 // Duplicate Remover
 // Given a list of integers, remove all duplicates using a Set<Integer>
+package com.aaslin.java.assignments.assignment6;
 import java.util.Scanner;
 import java.util.HashSet;
 import java.util.Set;
