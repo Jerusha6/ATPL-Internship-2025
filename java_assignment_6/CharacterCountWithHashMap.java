@@ -1,13 +1,13 @@
 // Character Count
 // Given a string, count the occurrences of each character using a
 // HashMap<Character, Integer>.
-// package com.aaslin.java.assignments.assignment6;
+package com.aaslin.java.assignments.assignment6;
 import java.util.Scanner;
 import java.util.Map;
 import java.util.HashMap;
 class CharacterCountWithHashMap {
-public static void countOccurances(String s) {
-char[] charArray = s.toCharArray();
+public static void countOccurances(String string) {
+char[] charArray = string.toCharArray();
 HashMap<Character, Integer> map = new HashMap<>();
     for (int iterator = 0; iterator < charArray.length; iterator++) {
         map.put(charArray[iterator], map.getOrDefault(charArray[iterator],0) + 1);
