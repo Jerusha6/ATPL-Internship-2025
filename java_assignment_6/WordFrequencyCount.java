@@ -1,7 +1,7 @@
 // Character Count
 // Given a string, count the occurrences of each character using a
 // HashMap<Character, Integer>.
-// package com.aaslin.java.assignments.assignment6;
+package com.aaslin.java.assignments.assignment6;
 import java.util.Scanner;
 import java.util.Map;
 import java.util.HashMap;
