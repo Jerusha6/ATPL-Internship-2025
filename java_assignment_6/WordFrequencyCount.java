@@ -1,6 +1,7 @@
-// Character Count
-// Given a string, count the occurrences of each character using a
-// HashMap<Character, Integer>.
+// Word Frequency Counter
+// Input a paragraph and count the frequency of each word using Map<String,
+// Integer>.
+
 package com.aaslin.java.assignments.assignment6;
 import java.util.Scanner;
 import java.util.Map;
