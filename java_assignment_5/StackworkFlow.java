@@ -1,14 +1,18 @@
+// Explain with an example how Stack follows LIFO (Last In First Out)
+// principle.
+
+
 import java.util.Stack;
 import java.util.Scanner;
-class StackworkFlow {
+class StackWorkFlow {
 public static void main(String[] args){
     Stack<String> stack = new Stack<>();
     
-    try(Scanner sc = new Scanner(System.in)){
+    try(Scanner scanner = new Scanner(System.in)){
         System.out.println("Stack follows LIFO(Last In First Out), means whatever we push first, that will be the last one to pop. Here is the example..");
         System.out.println("Enter any 5 names to push into stack: ");
-        for(int i=0;i<5;i++){
-            stack.push(sc.nextLine());
+        for(int iteration=0;iteration<5;iteration++){
+            stack.push(scanner.nextLine());
         }
         System.out.println("Here are the five names that you pushed into stack: ");
         System.out.println("Stack: " + stack); 

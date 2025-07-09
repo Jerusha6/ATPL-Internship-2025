@@ -1,13 +1,19 @@
+// Write a Java program to:
+// ○ Create a Stack of Integers.
+// ○ Push 5 numbers onto the stack.
+// ○ Pop 2 elements.
+// ○ Print the remaining elements.
+
 import java.util.Stack;
 import java.util.Scanner;
-class Stackcls {
+class StackClass {
 public static void main(String[] args){
     Stack<Integer> stack = new Stack<>();
     
-    try(Scanner sc = new Scanner(System.in)){
+    try(Scanner scanner = new Scanner(System.in)){
         System.out.println("Enter any 5 elements to push into stack: ");
-        for(int i=0;i<5;i++){
-            stack.push(sc.nextInt());
+        for(int iteration=0;iteration<5;iteration++){
+            stack.push(scanner.nextInt());
         }
         System.out.println("Here are the five elements you pushed into stack: ");
         System.out.println("Stack: " + stack); 
