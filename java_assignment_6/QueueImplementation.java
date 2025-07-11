@@ -1,11 +1,11 @@
 package com.aaslin.java.assignments.assignment6;
 
-class Queue{
+class QueueDemo{
 	private int front;
 	private int rear;
 	private int maxSize;
 	private int[] array;
-	public Queue(int size) {
+	public QueueDemo(int size) {
 		front=-1;
 		rear=-1;
 		maxSize=size;
@@ -46,19 +46,17 @@ class Queue{
 	public int peek() {
 		return array[front];
 	}
-	public void isFull() {
-		if(rear==maxSize-1) {
-			System.out.println("\nQueue is full");
+	public boolean isEmpty() {
+		if(front==-1 && rear == -1) {
+			return true;
 		}
-		else {
-			System.out.println("\nQueue still has "+((maxSize-1)-rear)+" capacity");
-		}
+		else return false;
 	}
 }
 
 public class QueueImplementation{
 	public static void main(String[] args) {
-		Queue queue = new Queue(5);
+		QueueDemo queue = new QueueDemo(5);
 		queue.enqueue(10);
 		queue.enqueue(20);
 		queue.enqueue(30);
@@ -69,7 +67,7 @@ public class QueueImplementation{
 		queue.dequeue();
 		queue.dequeue();
 		queue.showQueue();
-		queue.isFull();
+		queue.isEmpty();
 		System.out.println("Peek element: "+queue.peek());
 		
 	}
