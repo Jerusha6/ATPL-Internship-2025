@@ -15,7 +15,7 @@ public class PrintQueueSystem {
 		System.out.println("Enter number documents you want to put into queue: ");
 		int DocumentCount = scanner.nextInt();
 		
-		// to consume the leftover newline character in the input buffer.
+		// to consume the leftover newline character in the input buffer
 		scanner.nextLine();
 		
 		System.out.println("Add "+DocumentCount+" Documents: ");
