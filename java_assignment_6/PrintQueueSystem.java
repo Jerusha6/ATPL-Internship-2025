@@ -14,18 +14,27 @@ public class PrintQueueSystem {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter number documents you want to put into queue: ");
 		int DocumentCount = scanner.nextInt();
+		
+		// to consume the leftover newline character in the input buffer.
 		scanner.nextLine();
+		
 		System.out.println("Add "+DocumentCount+" Documents: ");
+		
 		for(int iterator=0;iterator<DocumentCount;iterator++) {
 			queue.offer(scanner.nextLine());
 		}
+		
 		System.out.println("Documents added to the queue");
 		System.out.println("Enter number documents you want to process: ");
+		
 		int ProcessCount = scanner.nextInt();
+		
 		for(int iterator=0;iterator<ProcessCount;iterator++) {
 			queue.poll();
 		}
+		
 		System.out.println(ProcessCount+" documents processed.)");
+		
 		if(queue.size()!=0)
 			System.out.println(" Here is the remaining documents to process"+queue);
 		else
