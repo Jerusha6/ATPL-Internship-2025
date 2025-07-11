@@ -14,10 +14,16 @@ public class PalindromeChecker {
 		}
 		boolean result=true;
 		for(int iterator = 0; iterator<deque.size(); iterator++){
+
+			// checking from first to middle and last to middle
+
 			if(!(deque.peekFirst().equals(deque.peekLast()))){
 				result=false;
 				break;
 			}
+
+			// if the both values are same(first and last) then remove them from queue
+
 			else {
 				deque.pollFirst();
 				deque.pollLast();
