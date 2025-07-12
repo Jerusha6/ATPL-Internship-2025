@@ -2,7 +2,7 @@
 // into a new file named "concatenated.txt". 
 // Make sure to handle file not found exceptions and any other relevant IO exceptions.
 
-// package com.aaslin.java.assignments.assignment_8;
+package com.aaslin.java.assignments.assignment_8;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

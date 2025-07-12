@@ -4,7 +4,7 @@
 
 // shift+alt+o () shortcut to import libraries in vscode
 
-// package com.aaslin.java.assignments.assignment_8;
+package com.aaslin.java.assignments.assignment_8;
 
 import java.io.File;
 import java.io.FileWriter;
