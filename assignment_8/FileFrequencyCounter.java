@@ -26,7 +26,7 @@ public class FileFrequencyCounter {
             try (FileWriter fileWriter = new FileWriter(file)) {
                 fileWriter.write("Aaslin Technologies is a product based company, which is located in Visakhapatnam."
                         + " Currently I'm working in Aaslin technologies as a junior software developer."
-                        + " This is one of the best places on Visakhapatnam for one can learn a technology in deeper.");
+                        + " This is one of the best places in Visakhapatnam for one can learn a technology in deeper.");
             }
 
             // Read and count word frequencies
