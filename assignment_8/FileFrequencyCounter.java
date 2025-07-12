@@ -1,3 +1,11 @@
+// Write a Java program that reads a text file named "input.txt" and counts the frequency of each word in the file.
+// Then, write these word frequencies along with the corresponding words to another text file named "word_frequencies.txt",
+// sorted in descending order of frequency. Ensure that your program handles file IO exceptions appropriately.
+
+// shift+alt+o () shortcut to import libraries in vscode
+
+// package com.aaslin.java.assignments.assignment_8;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
