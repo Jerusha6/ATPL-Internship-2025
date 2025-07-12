@@ -2,7 +2,7 @@
 // Write the modified text to another file named "reversed.txt". 
 // Ensure that your program handles file IO exceptions and empty lines gracefully.
 
-// package com.aaslin.java.assignments.assignment_8;
+package com.aaslin.java.assignments.assignment_8;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
