@@ -17,7 +17,7 @@ public class StudentSummary {
 		double gpa = 0;
 		
 		System.out.println("Enter student details: ");
-			for(int iterator=0;iterator<2;iterator++) {
+			for(int iterator=0;iterator<5;iterator++) {
 				System.out.println("Enter student "+(iterator+1)+" details: ");
 				System.out.println("Enter name: ");
 				name = scanner.nextLine();			
