@@ -38,10 +38,6 @@ public class PrintWriterDemo {
 			printWriter.printf("Student[name=%s, age= %d, department= %s, gpa=%fd]",name,age,department,gpa);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}		
-		
-		for(StudentData student : students) {
-			System.out.println(student);
 		}
 		scanner.close();
 	}
