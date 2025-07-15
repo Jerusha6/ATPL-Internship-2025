@@ -24,7 +24,7 @@ public class StringFormatterDemo {
 		try {
 			PrintWriter printWriter = new PrintWriter(new FileWriter(file));
 			
-			String writeLine=String.format("%s%14s%15s%9s%n","Name","Age","Department","GPA");
+			String writeLine=String.format("%-20s%-10s%-20s%-10s%n","Name","Age","Department","GPA");
 			printWriter.printf(writeLine);
 			int count=0;	
 			for(int iterator=0;iterator<2;iterator++) {
@@ -39,7 +39,7 @@ public class StringFormatterDemo {
 				gpa = scanner.nextDouble();
 				scanner.nextLine();
 				// printing to file students.txt
-				writeLine = String.format("%s%10d%10s%15.2f%n",name,age,department,gpa);
+				writeLine = String.format("%-20s%-10d%-15s%10.2f%n",name,age,department,gpa);
 				printWriter.printf(writeLine);
 			}			
 			printWriter.close();
