@@ -1,1 +1,0 @@
-Student 1 [name=jer, age= 3, department= cse, gpa=5.00]
