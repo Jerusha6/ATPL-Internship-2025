@@ -1,4 +1,4 @@
-// package com.aaslin.java.assignments.assignment_8_2;
+package com.aaslin.java.assignments.assignment_8_2;
 import java.util.Scanner;
 import java.util.List;
 import java.io.File;
