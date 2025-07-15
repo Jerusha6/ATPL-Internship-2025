@@ -1,3 +1,5 @@
+package com.aaslin.java.assignments.assignment_8;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
