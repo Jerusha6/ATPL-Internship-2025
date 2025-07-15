@@ -1,0 +1,2 @@
+Student 1 [name=jerusha, age= 21, department= cse, gpa=8.00]
+Student 2 [name=bharani, age= 22, department= ece, gpa=4.00]

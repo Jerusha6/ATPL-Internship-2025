@@ -22,7 +22,8 @@ public class PrintWriterDemo {
 		
 		System.out.println("Enter student details: ");
 		try {
-			PrintWriter printWriter = new PrintWriter(new FileWriter(file));	
+			PrintWriter printWriter = new PrintWriter(new FileWriter(file));
+			int count=0;	
 			for(int iterator=0;iterator<2;iterator++) {
 				System.out.println("Enter student "+(iterator+1)+" details: ");
 				System.out.println("Enter name: ");
@@ -34,8 +35,10 @@ public class PrintWriterDemo {
 				System.out.println("Enter gpa: ");
 				gpa = scanner.nextDouble();
 				scanner.nextLine();
-				printWriter.printf("Student[name=%s, age= %d, department= %s, gpa=%fd]",name,age,department,gpa);
+				// printing to file students.txt
+				printWriter.printf("Student %d [name=%s, age= %d, department= %s, gpa=%.2f]%n",++count, name,age,department,gpa);
 			}			
+			printWriter.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
