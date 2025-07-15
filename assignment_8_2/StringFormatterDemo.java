@@ -1,4 +1,4 @@
-// package com.aaslin.java.assignments.assignment_8_2;
+package com.aaslin.java.assignments.assignment_8_2;
 import java.util.Scanner;
 import java.util.List;
 import java.io.File;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-public class PrintWriterDemo {
+public class StringFormatterDemo {
 
 	public static void main(String[] args) {
 		
@@ -23,8 +23,8 @@ public class PrintWriterDemo {
 		System.out.println("Enter student details: ");
 		try {
 			PrintWriter printWriter = new PrintWriter(new FileWriter(file));	
-			for(int iterator=0;iterator<2;iterator++) {
-				System.out.println("Enter student "+(iterator+1)+" details: ");
+			for(int iterator=0;iterator<5;iterator++) {
+				System.out.println("Enter student"+(iterator+1)+" details: ");
 				System.out.println("Enter name: ");
 				name = scanner.nextLine();			
 				System.out.println("Enter department: ");
@@ -33,7 +33,6 @@ public class PrintWriterDemo {
 				age = scanner.nextInt();
 				System.out.println("Enter gpa: ");
 				gpa = scanner.nextDouble();
-				scanner.nextLine();
 				printWriter.printf("Student[name=%s, age= %d, department= %s, gpa=%fd]",name,age,department,gpa);
 			}			
 		} catch (IOException e) {
