@@ -1,11 +1,9 @@
 // package com.aaslin.java.assignments.assignment_8_2;
 import java.util.Scanner;
-import java.util.List;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 public class StringFormatterDemo {
 
@@ -27,7 +25,7 @@ public class StringFormatterDemo {
 			String writeLine=String.format("%-20s%-10s%-20s%-10s%n","Name","Age","Department","GPA");
 			printWriter.printf(writeLine);
 			int count=0;	
-			for(int iterator=0;iterator<2;iterator++) {
+			for(int iterator=0;iterator<5;iterator++) {
 				System.out.println("Enter student "+(iterator+1)+" details: ");
 				System.out.println("Enter name: ");
 				name = scanner.nextLine();			

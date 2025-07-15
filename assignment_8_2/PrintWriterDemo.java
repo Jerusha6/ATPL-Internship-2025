@@ -1,11 +1,9 @@
 package com.aaslin.java.assignments.assignment_8_2;
 import java.util.Scanner;
-import java.util.List;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 public class PrintWriterDemo {
 
@@ -24,7 +22,7 @@ public class PrintWriterDemo {
 		try {
 			PrintWriter printWriter = new PrintWriter(new FileWriter(file));
 			int count=0;	
-			for(int iterator=0;iterator<2;iterator++) {
+			for(int iterator=0;iterator<5;iterator++) {
 				System.out.println("Enter student "+(iterator+1)+" details: ");
 				System.out.println("Enter name: ");
 				name = scanner.nextLine();			
