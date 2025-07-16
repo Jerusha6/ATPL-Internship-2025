@@ -1,4 +1,4 @@
-// package com.aaslin.java.assignments.assignment_8_2;
+package com.aaslin.java.assignments.assignment_8_2;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,9 +47,9 @@ public class SerializeDemo {
     	try {
         	FileOutputStream file = new FileOutputStream(fileName);
         	ObjectOutputStream out = new ObjectOutputStream(file);
-        	        	
+		
         	out.writeObject(studentList);
-
+		
 			file.close();
 			out.close();
  	
