@@ -20,22 +20,22 @@ public class StringFormatterDemo {
         int nameColWidth = 20;
         int deptColWidth = 20;
 		
-        for (int i = 0; i < 5; i++) {
-            System.out.println("Enter student " + (i + 1) + " details: ");
+        for (int iterator = 0; iterator < 5; i++) {
+            System.out.println("Enter student " + (iterator + 1) + " details: ");
 
             System.out.print("Enter name: ");
-            names[i] = scanner.nextLine();
-            nameColWidth = Math.max(nameColWidth, names[i].length() + 2);
+            names[iterator] = scanner.nextLine();
+            nameColWidth = Math.max(nameColWidth, names[iterator].length() + 2);
 
             System.out.print("Enter department: ");
-            departments[i] = scanner.nextLine();
-            deptColWidth = Math.max(deptColWidth, departments[i].length() + 2);
+            departments[iterator] = scanner.nextLine();
+            deptColWidth = Math.max(deptColWidth, departments[iterator].length() + 2);
 
             System.out.print("Enter age: ");
-            ages[i] = scanner.nextInt();
+            ages[iterator] = scanner.nextInt();
 
             System.out.print("Enter GPA: ");
-            gpas[i] = scanner.nextDouble();
+            gpas[iterator] = scanner.nextDouble();
             scanner.nextLine();
         }
 
@@ -46,8 +46,8 @@ public class StringFormatterDemo {
             writer.print(header);
 
             // Write student data
-            for (int i = 0; i < 5; i++) {
-                String line = String.format("%-" + nameColWidth + "s%-10d%-" + deptColWidth + "s%-10.2f%n", names[i], ages[i], departments[i], gpas[i]);
+            for (int index = 0; index < 5; index++) {
+                String line = String.format("%-" + nameColWidth + "s%-10d%-" + deptColWidth + "s%-10.2f%n", names[index], ages[index], departments[index], gpas[index]);
                 writer.print(line);
             }
 
