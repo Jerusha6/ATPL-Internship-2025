@@ -1,3 +1,4 @@
+package com.aaslin.java.assignments.assignment_8_2;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
