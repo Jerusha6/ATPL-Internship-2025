@@ -20,7 +20,7 @@ public class StringFormatterDemo {
         int nameColWidth = 20;
         int deptColWidth = 20;
 		
-        for (int iterator = 0; iterator < 5; i++) {
+        for (int iterator = 0; iterator < 5; iterator++) {
             System.out.println("Enter student " + (iterator + 1) + " details: ");
 
             System.out.print("Enter name: ");
