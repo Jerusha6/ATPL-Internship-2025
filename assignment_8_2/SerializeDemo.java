@@ -12,6 +12,7 @@ import java.io.Serializable;
 
 class Student implements Serializable{
 	
+	// whitespace
 	private static final long serialVersionUID = 232456744L;
     private int id;
     private String name;
