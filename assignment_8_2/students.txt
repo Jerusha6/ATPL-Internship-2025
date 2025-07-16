@@ -1,0 +1,6 @@
+Name                      Age       Department          GPA       
+jerusha                   21        cse                 9.00      
+bharani                   21        cse                 6.00      
+sachit                    34        cse                 8.00      
+elisha                    55        cse                 9.00      
+asdfghjkloiuytre redswet  44        cseyiokhrdfhjjl     9.00      
