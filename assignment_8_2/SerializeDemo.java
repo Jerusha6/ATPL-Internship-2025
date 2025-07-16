@@ -68,10 +68,10 @@ public class SerializeDemo {
 			for(Student student : studentList){
 				System.out.println(student);
 			}
-		}catch(IOException io){
-			System.out.println(io.getMessage());
-		}catch(ClassNotFoundException cne){
-			System.out.println(cne.getMessage());
-		}
+			}catch(IOException io){
+				System.out.println(io.getMessage());
+			}catch(ClassNotFoundException cne){
+				System.out.println(cne.getMessage());
+			}
     }
 }
