@@ -24,22 +24,29 @@ public class PrintWriterDemo {
 			int count=0;	
 			for(int iterator=0;iterator<5;iterator++) {
 				System.out.println("Enter student "+(iterator+1)+" details: ");
-				System.out.println("Enter name: ");
+
+				System.out.print("Enter name: ");
 				name = scanner.nextLine();			
-				System.out.println("Enter department: ");
+
+				System.out.print("Enter department: ");
 				department = scanner.nextLine();
-				System.out.println("Enter age: ");
+
+				System.out.print("Enter age: ");
 				age = scanner.nextInt();
-				System.out.println("Enter gpa: ");
+
+				System.out.print("Enter gpa: ");
 				gpa = scanner.nextDouble();
 				scanner.nextLine();
+
 				// printing to file students.txt
 				printWriter.printf("Student %d [name=%s, age= %d, department= %s, gpa=%.2f]%n",++count, name,age,department,gpa);
-			}			
+			}
 			printWriter.close();
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		scanner.close();
 	}
 
