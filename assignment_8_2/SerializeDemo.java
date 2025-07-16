@@ -47,10 +47,8 @@ public class SerializeDemo {
     	try {
         	FileOutputStream file = new FileOutputStream(fileName);
         	ObjectOutputStream out = new ObjectOutputStream(file);
-		
         	out.writeObject(studentList);
-		
-			file.close();
+        	file.close();
 			out.close();
  	
     	}catch(IOException io) {
