@@ -36,7 +36,7 @@ public class StudentSummary {
 		for (int index = 0; index < 5; index++) {  
 			String format = MessageFormat.format("Student {0} from {1} department has secured a GPA of {2}.", names[index], departments[index], gpas[index]);
 			System.out.println(format);
-            }
+        }
 		scanner.close();
 	}
 
