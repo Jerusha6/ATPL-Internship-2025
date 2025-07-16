@@ -11,7 +11,7 @@ import java.util.List;
 import java.io.Serializable;
 
 class Student implements Serializable{
-
+	
 	private static final long serialVersionUID = 232456744L;
     private int id;
     private String name;
@@ -49,7 +49,7 @@ public class SerializeDemo {
         	ObjectOutputStream out = new ObjectOutputStream(file);
         	out.writeObject(studentList);
         	file.close();
-			out.close();
+        	out.close();
  	
     	}catch(IOException io) {
     		System.out.print(io.getMessage());
@@ -58,7 +58,7 @@ public class SerializeDemo {
 		studentList = null; //dereferencing the object to null
     	
     	try{
-			FileInputStream file = new FileInputStream(fileName);
+    		FileInputStream file = new FileInputStream(fileName);
 			ObjectInputStream in = new ObjectInputStream(file);
 			
 			studentList = (List) in.readObject();
