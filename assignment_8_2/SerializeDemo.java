@@ -13,10 +13,10 @@ public class SerializeDemo {
 
     	List<Student> list = new ArrayList<>();
 		list.add(new Student(1, "JERUSHA", 21, "CSE", 8));
-    	list.add(new Student(2, "ELISHA", 19, "CSE", 8));
-    	list.add(new Student(3, "ANAND", 41, "CSE", 8));
-    	list.add(new Student(4, "ROJA", 31, "CSE", 8));
-    	list.add(new Student(5, "BHARANI", 20, "CSE", 8));
+		list.add(new Student(2, "ELISHA", 19, "CSE", 8));
+		list.add(new Student(3, "ANAND", 41, "CSE", 8));
+		list.add(new Student(4, "ROJA", 31, "CSE", 8));
+		list.add(new Student(5, "BHARANI", 20, "CSE", 8));
     	try {
     		
     		File fileName = new File("students.ser");
