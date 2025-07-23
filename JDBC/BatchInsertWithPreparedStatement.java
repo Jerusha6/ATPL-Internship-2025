@@ -12,7 +12,7 @@ class BatchInsertWithPreparedStatement {
             Connection conn = DriverManager.getConnection(url, username, password);
             PreparedStatement preparedStatement = conn.prepareStatement(query);
 
-            conn.setAutoCommit(false);  // Optional: speeds up batch insert
+            conn.setAutoCommit(false);
 
             // 1st record
             preparedStatement.setInt(1, 105);
@@ -32,10 +32,10 @@ class BatchInsertWithPreparedStatement {
             preparedStatement.setString(3, "bharani@gmail.com");
             preparedStatement.addBatch();
 
-            // Execute all insertions in one go
+
             int[] result = preparedStatement.executeBatch();
 
-            conn.commit();  // Commit if everything goes well
+            conn.commit();
 
             System.out.println("Inserted rows: " + result.length);
 
