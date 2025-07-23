@@ -1,8 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.SQLException;
+import java.sql.*;
 
 class ReusePrepareStatement {
     public static void main(String[] args){
@@ -11,14 +7,15 @@ class ReusePrepareStatement {
         String username = "intern2025";
         String password = "intern2025";
 
-        String query1 = "Select * from users_jerusha";
-        String query2 = "Select * from products_jerusha";
+        String query1 = "Select * from users_jerusha where user_name = ?";
+        String query2 = "Select * from products_jerusha where product_id = ?";
         try{
 
             Connection conn = DriverManager.getConnection(url, username, password);
-            Statement stmt = conn.createStatement();
-            //          Executing query1
-            ResultSet rs = stmt.executeQuery(query1);
+            PreparedStatement preparedStatement = conn.prepareStatement(query1);
+            //Executing query1
+            preparedStatement.setString(1, "jerusha");
+            ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
                 System.out.print(rs.getInt(1)+" ");
                 System.out.print(rs.getString(2)+" ");
@@ -27,10 +24,13 @@ class ReusePrepareStatement {
                 System.out.println();
             }
 
+
             System.out.println();
 
-            //          Reusing preparedStatement and Executing query2
-            rs = stmt.executeQuery(query2);
+            //Reusing preparedStatement and Executing query2
+            preparedStatement = conn.prepareStatement(query2);
+            preparedStatement.setString(1, "p101");
+            rs = preparedStatement.executeQuery();
             while(rs.next()){
                 System.out.print(rs.getString(1)+" ");
                 System.out.print(rs.getString(2)+" ");
@@ -40,7 +40,7 @@ class ReusePrepareStatement {
             }
 
             conn.close();
-            stmt.close();
+            preparedStatement.close();
             rs.close();
 
         } catch (SQLException e) {
