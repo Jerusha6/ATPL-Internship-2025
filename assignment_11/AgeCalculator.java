@@ -15,9 +15,11 @@ public class AgeCalculator {
         LocalDate today = LocalDate.now();
 
         Period period = Period.between(birthDate, today);
-        int age = period.getYears();
+        int year = period.getYears();
+        int month = period.getMonths();
+        int day = period.getDays();
 
-        System.out.println("Your age is: "+age);
+        System.out.println("Your age is: "+year+" years "+month+" months "+day+" days.");
     }
 }
 }
