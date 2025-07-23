@@ -10,8 +10,8 @@ class SqlInjectionPrevention {
         try{
             Connection conn = DriverManager.getConnection(url, username, password);
             Statement stmt = conn.createStatement();
-            stmt.execute("CREATE TABLE users (username VARCHAR(50), password VARCHAR(50))");
-            stmt.execute("INSERT INTO users VALUES ('admin', 'admin123')");
+            stmt.execute("CREATE TABLE admin_jerusha (user_name VARCHAR(50), password VARCHAR(50))");
+            stmt.execute("INSERT INTO admin_jerusha VALUES ('admin', 'admin123')");
 
             // Take input from user
             Scanner scanner = new Scanner(System.in);
@@ -36,7 +36,7 @@ class SqlInjectionPrevention {
     // Vulnerable login using Statement
     public static void loginWithStatement(Connection conn, String username, String password) throws SQLException {
         Statement stmt = conn.createStatement();
-        String query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
+        String query = "SELECT * FROM admin_jerusha WHERE username = '" + username + "' AND password = '" + password + "'";
         System.out.println("Executing query: " + query);
         ResultSet rs = stmt.executeQuery(query);
         if (rs.next()) {
@@ -49,7 +49,7 @@ class SqlInjectionPrevention {
 
     // Secure login using PreparedStatement
     public static void loginWithPreparedStatement(Connection conn, String username, String password) throws SQLException {
-        String query = "SELECT * FROM users WHERE username = ? AND password = ?";
+        String query = "SELECT * FROM admin_jerusha WHERE username = ? AND password = ?";
         PreparedStatement pstmt = conn.prepareStatement(query);
         pstmt.setString(1, username);
         pstmt.setString(2, password);

@@ -7,13 +7,12 @@ class PartialMatch {
         String username = "intern2025";
         String password = "intern2025";
 
-        String query = " SELECT * FROM products WHERE name LIKE ? ";
+        String query = " SELECT * FROM products_jerusha WHERE product_name LIKE ? ";
         try{
             Connection conn = DriverManager.getConnection(url, username, password);
             PreparedStatement preparedStatement = conn.prepareStatement(query);
-            preparedStatement.setString(1, "%scree%");
-
-            ResultSet rs = preparedStatement.executeQuery(query);
+            preparedStatement.setString(1, "%screen%");
+            ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
                 System.out.print(rs.getString(1)+" ");
                 System.out.print(rs.getString(2)+" ");

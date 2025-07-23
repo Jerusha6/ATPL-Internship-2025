@@ -7,13 +7,14 @@ class NullHandling {
         String username = "intern2025";
         String password = "intern2025";
 
-        String query = "INSERT INTO products_jerusha (name, price, description) VALUES (?, ?, ?) ";
+        String query = "INSERT INTO products_jerusha (product_ID, product_name, price, product_description) VALUES (?, ?, ?, ?) ";
         try{
             Connection conn = DriverManager.getConnection(url, username, password);
             PreparedStatement preparedStatement = conn.prepareStatement(query);
-            preparedStatement.setString(1, "Body Wash");
-            preparedStatement.setString(2, "499");
-            preparedStatement.setNull(3, java.sql.Types.VARCHAR);
+            preparedStatement.setInt(1, 108);
+            preparedStatement.setString(2, "Body Wash");
+            preparedStatement.setString(3, "499");
+            preparedStatement.setNull(4, java.sql.Types.VARCHAR);
 
             preparedStatement.executeUpdate();
 
