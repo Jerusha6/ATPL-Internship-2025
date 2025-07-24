@@ -4,7 +4,7 @@
 
 // shift+alt+o () shortcut to import libraries in vscode
 
-package com.aaslin.java.assignments.assignment_8;
+// package com.aaslin.java.assignments.assignment_8;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -24,9 +24,8 @@ public class FileFrequencyCounter {
 
             // Write to input.txt
             try (FileWriter fileWriter = new FileWriter(file)) {
-                fileWriter.write("Aaslin Technologies is a product based company, which is located in Visakhapatnam."
-                        + " Currently I'm working in Aaslin technologies as a junior software developer."
-                        + " This is one of the best places in Visakhapatnam for one can learn a technology in deeper.");
+                fileWriter.write(" Hello I'm Jerusha! " + " Currently I'm working in Aaslin technologies as an intern."
+                        + " Hello I'm Jerusha! " + " Currently I'm working in Aaslin technologies as an intern.");
             }
 
             // Read and count word frequencies
