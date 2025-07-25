@@ -6,17 +6,15 @@
 // Hint : Create a Supplier loadConfig which will have a configuration string.
 
 import java.util.Optional;
-import java.util.function.Supplier;
-
+import java.util.function.Supplier; 
 public class LazyConfigurationLoader {
     public static void main(String[] args) {
-        Optional<String> configValue = Optional.empty();
+        Supplier<String> loadConfig = () -> "Configuration Value";
 
-        // Supplier to lazily load config if missing
-        Supplier<String> loadConfig = () -> "LoadedDefaultConfig";
+        Optional<String> configValue = Optional.ofNullable(null);
 
         String finalConfig = configValue.orElseGet(loadConfig);
 
-        System.out.println("Final configuration: " + finalConfig);
+        System.out.println("Loaded Configuration: " + finalConfig);
     }
 }
