@@ -5,7 +5,6 @@ import java.util.function.Consumer;
 class Customer {
     String id;
     String name;
-    double salary;
     boolean subscriptionStatus;
 
     public Customer(String customer_id, String customer_name, boolean subscriptionStatus) {
