@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.function.Supplier; 
 public class LazyConfigurationLoader {
     public static void main(String[] args) {
-        Supplier<String> loadConfig = () -> "Configuration Value";
+        Supplier<String> loadConfig = () -> "Default Configuration Loaded";
 
         Optional<String> configValue = Optional.ofNullable(null);
 
