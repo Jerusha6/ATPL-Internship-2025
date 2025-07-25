@@ -29,8 +29,8 @@ public class UserSearchEmailTransformation {
         list.add(new Users("U104", "Anand", null));
         list.add(new Users("U105", "Roja", "roja@gmail.com"));
 
-        Function<String, String> toUpper = email -> email.toUpperCase(); 
 
+        Function<String, String> toUpper = String::toUpperCase;
         list.stream() .forEach(user -> {
             System.out.println("User ID: "+ user.id+"\nUser name: "+ user.name+"\nEmail: "+ toUpper.apply(user.getEmail().orElse("User email is not available!")));
         });
