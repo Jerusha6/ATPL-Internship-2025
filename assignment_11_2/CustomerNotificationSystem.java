@@ -30,7 +30,7 @@ public class CustomerNotificationSystem {
 
         list.stream()
                 .filter(customer -> customer.subscriptionStatus)
-                .forEach(c -> consumer.accept("Thank you for subscribing, " + c.name + "!"));
+                .forEach(customer -> consumer.accept("Thank you for subscribing, " + customer.name + "!"));
 
     }
 }
