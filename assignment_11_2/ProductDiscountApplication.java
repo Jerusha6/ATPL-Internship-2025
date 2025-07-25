@@ -16,8 +16,7 @@ public class ProductDiscountApplication {
         productMap.put("ThinkPad", Optional.ofNullable(null));
         productMap.put("Samsung A35", Optional.ofNullable(35000.0));
 
-        Function<Double, Double> discoutFunction = price -> price * 0.9; // discount =>10% so price - (0.1 * price) => // price*(1-0.1)
-                                                                         
+        Function<Double, Double> discoutFunction = ProductDiscountApplication::applyDiscount;                                                                          
 
         productMap.forEach((product, OptionalPrice) -> {
             if (OptionalPrice.isPresent()) {
@@ -27,6 +26,9 @@ public class ProductDiscountApplication {
                 System.out.println(product + " price not available");
             }
         });
+    }
+    public static double applyDiscount(Double price) {
+        return price * 0.9; // discount =>10% so price - (0.1 * price) => // price*(1-0.1)
 
     }
 }
