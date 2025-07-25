@@ -13,48 +13,19 @@ import java.util.function.Predicate;
 class Employee {
     String id;
     String name;
-    Double salary;
+    double salary;
     String email;
 
-    public Employee(String employee_id, String employee_name, Double employee_salary, String employee_email) {
+    public Employee(String employee_id, String employee_name, double employee_salary, String employee_email) {
         id = employee_id;
         name = employee_name;
         salary = employee_salary;
         email = employee_email;
     }
 
-    public String getEmployee_id() {
-        return id;
-    }
-
-    public void setEmployee_id(String employee_id) {
-        id = employee_id;
-    }
-
-    public String getEmployee_name() {
-        return name;
-    }
-
-    public void setEmployee_name(String employee_name) {
-        name = employee_name;
-    }
-
-    public Double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Double employee_salary) {
-        salary = employee_salary;
-    }
-
     public Optional<String> getEmail() {
         return Optional.ofNullable(email);
     }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
 }
 
 public class EmployeeBonusFilter {
@@ -68,7 +39,7 @@ public class EmployeeBonusFilter {
         list.add(new Employee("E105", "Roja", 10000.00, "roja@gmail.com"));
 
         // Employees with wages up to ₹21,000 per month are generally eligible
-        Predicate<Employee> predicate = t -> t.getSalary() > 21000;
+        Predicate<Employee> predicate = t -> t.salary > 21000;
 
         System.out.println("Eligible Employees for Bonus:");
         System.out.println("-----------------------------------");
