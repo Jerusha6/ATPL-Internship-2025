@@ -4,14 +4,16 @@
 package com.aaslin.java.assignments.test;
 
 class NegativeMoneyException extends Throwable{	
-	public NegativeMoneyException(String string) {			
-			System.out.print("The entered money is in negative ");
+	public NegativeMoneyException(String string) {	
+			super(string);		
+			System.out.println("The entered money is in negative ");
 		}	
 }
 
 class InsufficientBalanceException extends Throwable{	
-	public InsufficientBalanceException(String string) {			
-			System.out.print("Insufficient Fund ");
+	public InsufficientBalanceException(String string) {
+			super(string);				
+			System.out.println("Insufficient Fund ");
 		}	
 }
 
@@ -29,7 +31,7 @@ class BankAccount{
 		}
 		else {
 			balance = balance + money;
-			System.out.print("Deposit success");
+			System.out.println("Deposit success");
 		}
 		
 	}
@@ -39,7 +41,7 @@ class BankAccount{
 		}
 		else {
 			balance = balance - money;
-			System.out.print("Withdrawl success");
+			System.out.println("Withdrawl success");
 		}
 		
 	}
@@ -54,12 +56,12 @@ public class BankATMSimulation {
 			bank.deposit(3000);
 			bank.deposit(-3000);
 		}catch(NegativeMoneyException ne) {
-			System.out.print(ne.getMessage());
+			System.out.println(ne.getMessage());
 		}
 		try {
 			bank.withdraw(1300000);
 		}catch(InsufficientBalanceException ibe) {
-			System.out.print(ibe.getMessage());
+			System.out.println(ibe.getMessage());
 		}
 
 	}

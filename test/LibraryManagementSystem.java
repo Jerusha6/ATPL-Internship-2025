@@ -1,7 +1,6 @@
 //SECTION B 1Q
 
 package com.aaslin.java.assignments.test;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,10 +27,10 @@ class Book{
 	
 }
 
-class BookNotFoundException extends Throwable{
+class BookNotFoundException extends Exception{
 
 	public BookNotFoundException(String string) {
-		
+		super(string);
 		System.out.print("The entered book is not found in the library");
 	}
 	
@@ -47,15 +46,14 @@ class Library{
 	}
 	
 	public void searchBook(String bookTitle)  throws BookNotFoundException{
-		
-			if(list.contains(bookTitle)) {
-				System.out.print(bookTitle+" there in Library");
+		for(Book book : list){
+			if(book.getTitle().equalsIgnoreCase(bookTitle)) {
+				System.out.print(bookTitle+" is there in the Library");
 			}else {
 				throw new BookNotFoundException(bookTitle+" is not found");
 			}			
-		
-	}
-	
+		}
+	}	
 }
 
 public class LibraryManagementSystem {
@@ -69,9 +67,6 @@ public class LibraryManagementSystem {
 		}catch(BookNotFoundException be) {
 			System.out.println(be.getMessage());
 		}
-		
-		
-
 	}
 
 }

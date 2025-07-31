@@ -18,7 +18,7 @@ class CardPayment implements Payment{
 	
 	@Override	
 	public void pay() {
-		System.out.println("CardPayment is successful");
+		System.out.println("Card Payment is successful");
 	}
 }
 
