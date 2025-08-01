@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <filter>
+  <filter-name>roleValidateFilter</filter-name>
+  <filter-class>com.aaslin.filters.RoleValidationWithFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>roleValidateFilter</filter-name>
+  <url-pattern>/showAdminData</url-pattern> 
+  </filter-mapping>
+  
+  <servlet> 
+  <servlet-name>CollectAdminData</servlet-name>
+  <servlet-class>com.aaslin.servlets.CollectAdminData</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>  
+   <servlet-name>CollectAdminData</servlet-name>
+   <url-pattern>/collectAdminData</url-pattern>
+   </servlet-mapping>
+   
+   
+   <servlet> 
+  <servlet-name>ShowOrders</servlet-name>
+  <servlet-class>com.aaslin.servlets.ShowOrders</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>  
+   <servlet-name>ShowOrders</servlet-name>
+   <url-pattern>/showOrders</url-pattern>
+   </servlet-mapping>
+   
+   <servlet> 
+  <servlet-name>insertIntoAdminDB</servlet-name>
+  <servlet-class>com.aaslin.servlets.InsertIntoAdminDB</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>  
+   <servlet-name>insertIntoAdminDB</servlet-name>
+   <url-pattern>/insertIntoAdminDB</url-pattern>
+   </servlet-mapping>
+   
+   <servlet> 
+  <servlet-name>activeStatusUpdate</servlet-name>
+  <servlet-class>com.aaslin.servlets.ActiveStatusUpdate</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>  
+   <servlet-name>activeStatusUpdate</servlet-name>
+   <url-pattern>/activeStatusUpdate</url-pattern>
+   </servlet-mapping>
+   
+   <servlet> 
+  <servlet-name>deleteAdminInfo</servlet-name>
+  <servlet-class>com.aaslin.servlets.DeleteAdminInfo</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>  
+   <servlet-name>deleteAdminInfo</servlet-name>
+   <url-pattern>/deleteAdminInfo</url-pattern>
+   </servlet-mapping>
+  
+  <servlet> 
+  <servlet-name>SingleServlet</servlet-name>
+  <servlet-class>com.aaslin.servlets.SingleServlet</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>  
+   <servlet-name>SingleServlet</servlet-name>
+   <url-pattern>/toDB</url-pattern>
+   </servlet-mapping>
+  
+   <servlet>
+   <servlet-name>UserMapping</servlet-name>
+  <servlet-class>com.aaslin.servlets.UserMapping</servlet-class>
+  </servlet>
+
+   <servlet-mapping>
+   <servlet-name>UserMapping</servlet-name>
+   <url-pattern>/getDetails</url-pattern> 
+  </servlet-mapping>
+  
+    <servlet>
+   <servlet-name>AdminAccess</servlet-name>
+  <servlet-class>com.aaslin.servlets.AdminAccess</servlet-class>
+  </servlet>
+
+   <servlet-mapping>
+   <servlet-name>AdminAccess</servlet-name>
+   <url-pattern>/showAdminData</url-pattern> 
+  </servlet-mapping>
+  
+  <servlet>
+   <servlet-name>AllUserMapping</servlet-name>
+  <servlet-class>com.aaslin.servlets.AllUserInfo</servlet-class>
+  </servlet>
+
+   <servlet-mapping>
+   <servlet-name>AllUserMapping</servlet-name>
+   <url-pattern>/getAllDetails</url-pattern> 
+  </servlet-mapping>
+ 
+	<error-page>
+        <error-code>404</error-code>
+        <location>/error.html</location>
+    </error-page>
+
+
+</web-app>
