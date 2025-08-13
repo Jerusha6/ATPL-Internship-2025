@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.aaslin.ProductInventory.model.Product;
 import com.aaslin.ProductInventory.service.ProductService;
 
+import jakarta.validation.Valid;
+
 
 @RestController 
 @RequestMapping("/api")
@@ -34,12 +36,13 @@ public class ProductController {
 	}
 	
 	@PostMapping("/products")
-	public void addProduct(@RequestBody Product product) {
+	public void addProduct(@RequestBody @Valid Product product) {
 		 service.addProduct(product);
 	}
 	
+	//To update
 	@PutMapping("/products/{productId}")
-	public void updateProduct(@PathVariable int productId, @RequestBody Product product) {
+	public void updateProduct(@PathVariable int productId,@Valid @RequestBody Product product) {
 		service.updateProduct(productId, product);
 	}
 	
