@@ -1,4 +1,5 @@
 package com.aaslin.ExceptionHandlingInputValidationShowcase.model;
+
 public class Errors {
 	private String message;
 	private int status;

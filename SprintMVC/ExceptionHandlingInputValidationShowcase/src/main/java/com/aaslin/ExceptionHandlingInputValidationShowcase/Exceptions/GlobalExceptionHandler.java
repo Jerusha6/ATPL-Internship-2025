@@ -30,9 +30,9 @@ public class GlobalExceptionHandler  {
 	
 	@ResponseBody
 	@ExceptionHandler(NotFoundException.class)
-	public ResponseEntity<String> handleNotFoundException(NotFoundException ex){
+	public String handleNotFoundException(NotFoundException ex){
 		StringBuilder errorMessage = new StringBuilder();
 		
-        return new ResponseEntity<>();
+        return ex.getMessage();
 	}
 }

@@ -9,6 +9,7 @@ import jakarta.validation.constraints.Positive;
 
 @Component 
 public class Employee {
+	
 	@Min(value = 1, message = "Employee id should be greater than 0")
 	private int EmployeeID;
 	@NotBlank(message="Employee name cannot be null")
@@ -16,25 +17,42 @@ public class Employee {
 	@NotNull(message="Employee price cannot be null")
 	@Email(message="Email format is invalid")
 	private String email;
-	@NotNull(message="Product price cannot be null")
 	@Positive(message="Salary should be greater than 0")
 	private double Salary;
 	
 	public Employee() {}
 	
-	public Employee(int EmployeeID, String name, String email) {
+	public Employee( int employeeID, String name, String email, double salary) {
 		super();
-		this.EmployeeID = EmployeeID;
+		EmployeeID = employeeID;
 		this.name = name;
 		this.email = email;
+		Salary = salary;
 	}
-	public int getProductId() {
+	public int getEmployeeID() {
 		return EmployeeID;
 	}
 	public String getName() {
 		return name;
 	}
-	public String getPrice() {
+	public String getEmail() {
 		return email;
 	}
+	public double getSalary() {
+		return Salary;
+	}
+	public void setEmployeeID(int employeeID) {
+		EmployeeID = employeeID;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public void setSalary(double salary) {
+		Salary = salary;
+	}
+	
+	
 }
