@@ -1,17 +1,20 @@
 package com.aaslin.ProductInventory.model;
 
 import org.springframework.stereotype.Component;
+
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 @Component 
 public class Product {
 	
-	@NotNull(message="Student id cannot be null")
+	@NotNull(message="Product id cannot be null")
+	@Min(value=1, message="Product id should be greater than 0")
 	private int productId;
-	@NotNull(message="Student name cannot be null")
+	@NotNull(message="Product name cannot be null")
 	private String name;
-	@NotNull(message="Student age cannot be null")
+	@NotNull(message="Product price cannot be null")
 	@Positive(message="Price should be positive")
 	private double price;
 	
