@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.aaslin.SprintMVC.model.Student;
 import com.aaslin.SprintMVC.service.StudentService;
 
+import jakarta.validation.Valid;
+
 
 @Controller 
 @RequestMapping("/students")
@@ -48,7 +50,7 @@ public class StudentController {
 		@PostMapping("/add")	
 		//form name values should match with Student class members(instance variables), so that
 		//@ModelAttribute directly fetch data from the client and add to Student object
-		public String addStudent(@ModelAttribute Student student) {
+		public String addStudent(@Valid @ModelAttribute Student student) {
 			service.addStudent(student);
 			return "Students"; // Students.jsp file
 		}
@@ -66,6 +68,7 @@ public class StudentController {
 	        return "UpdateStudentForm";  //this triggers UpdateStudentForm.jsp
 	    }		
 		
+		//To update
 		@RequestMapping("/update")
 		public String updateStudent(@ModelAttribute Student student) {
 			service.updateStudent(student);
