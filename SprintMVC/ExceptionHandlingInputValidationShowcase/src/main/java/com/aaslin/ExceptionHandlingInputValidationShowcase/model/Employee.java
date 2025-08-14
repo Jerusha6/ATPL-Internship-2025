@@ -7,7 +7,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
-@Component 
 public class Employee {
 	
 	@Min(value = 1, message = "Employee id should be greater than 0")

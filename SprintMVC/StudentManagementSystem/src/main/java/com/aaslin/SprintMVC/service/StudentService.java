@@ -12,9 +12,6 @@ import com.aaslin.SprintMVC.model.Student;
 @Service 
 public class StudentService {
 	
-	@Autowired 
-	public Student student;
-	
 	List<Student> studentList = new ArrayList<>(Arrays.asList(new Student("21nt1","jerusha","jerusha@gmail.com",21)));
 	
 	public void addStudent(Student student) {

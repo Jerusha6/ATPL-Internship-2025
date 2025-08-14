@@ -11,10 +11,8 @@ import com.aaslin.ProductInventory.model.Product;
 
 
 @Service 
-public class ProductService {
-	
-	@Autowired 
-	Product product;
+public class ProductService { 
+	Product product = new Product();
 	List<Product> productList = new ArrayList<>(Arrays.asList(
 					new Product(1, "ThinkCentre", 79000.00),
 					new Product(2,"Daikin AC", 44999.00),

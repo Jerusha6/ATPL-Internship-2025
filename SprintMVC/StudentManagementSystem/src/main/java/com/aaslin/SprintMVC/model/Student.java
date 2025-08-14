@@ -5,9 +5,7 @@ import org.springframework.stereotype.Component;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-
-
-@Component 
+ 
 public class Student {
 	
 	@NotNull(message="Student id cannot be null")

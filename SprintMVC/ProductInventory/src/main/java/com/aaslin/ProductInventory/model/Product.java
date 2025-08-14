@@ -1,11 +1,8 @@
 package com.aaslin.ProductInventory.model;
 
-import org.springframework.stereotype.Component;
-
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
-@Component
 public class Product {
 
 	@Min(value = 1, message = "Product id should be greater than 0")
