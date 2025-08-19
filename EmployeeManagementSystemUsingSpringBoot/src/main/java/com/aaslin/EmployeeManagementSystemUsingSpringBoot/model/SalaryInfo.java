@@ -7,10 +7,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -18,8 +17,7 @@ import jakarta.persistence.Table;
 @Table(name="salary_jerusha")
 public class SalaryInfo {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int salaryId;
+	private int employeeId;
 	
 	@Column(nullable=false)
 	private double baseSalary;
@@ -34,15 +32,16 @@ public class SalaryInfo {
 	private String updatedBy;
 	
 	@OneToOne
+	@MapsId //for both FK and PK
 	@JoinColumn(name="employeeId", nullable=false, unique=true)
 	private Employee employee;
 
-	public int getSalaryId() {
-		return salaryId;
+	public int getEmployeeId() {
+		return employeeId;
 	}
 
-	public void setSalaryId(int salaryId) {
-		this.salaryId = salaryId;
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
 	}
 
 	public double getBaseSalary() {

@@ -27,5 +27,7 @@ public interface EmployeeRepository extends JpaRepository<Employee,Integer>{
 	@Transactional
 	@Query("UPDATE Employee e SET e.isDeleted = true WHERE e.employeeId = :employeeId")
 	 public void terminateEmployee(@Param("employeeId")int employeeId);
+	
+	
 
 }

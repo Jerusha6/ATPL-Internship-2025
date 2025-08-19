@@ -3,6 +3,8 @@ package com.aaslin.EmployeeManagementSystemUsingSpringBoot.model;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -13,6 +15,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
@@ -61,6 +64,9 @@ public class Employee {
 	
 	@OneToOne(mappedBy="employee", cascade=CascadeType.ALL)
 	private SalaryInfo salaryInfo;
+	
+	@OneToMany(mappedBy="employee", cascade=CascadeType.ALL)
+	private List<Payroll> payrolls;
 	
 	public int getEmployeeId() {
 		return employeeId;

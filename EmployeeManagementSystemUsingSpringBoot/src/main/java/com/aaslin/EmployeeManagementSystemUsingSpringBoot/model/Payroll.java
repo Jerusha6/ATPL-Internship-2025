@@ -11,7 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,21 +21,21 @@ public class Payroll {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int payrollId;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="employeeId", nullable=false, unique=true)
 	private Employee employee;
 	
 	@Column(nullable=false)
-	private Date Payroll_month;
+	private Date PayrollMonth;
 	
 	@Column(nullable=false)
 	private double baseSalary;
 	
 	@Column(nullable=false)
-	private double bonus;
+	private double bonus=0;
 	
 	@Column(nullable=false)
-	private int leaveCount;
+	private int leaveCount=0;
 	
 	@Column(nullable=false)
 	private double netPay;
@@ -65,12 +65,12 @@ public class Payroll {
 		this.employee = employee;
 	}
 
-	public Date getPayroll_month() {
-		return Payroll_month;
+	public Date getPayrollMonth() {
+		return PayrollMonth;
 	}
 
-	public void setPayroll_month(Date payroll_month) {
-		Payroll_month = payroll_month;
+	public void setPayrollMonth(Date payrollMonth) {
+		PayrollMonth = payrollMonth;
 	}
 
 	public double getBaseSalary() {
