@@ -1,6 +1,9 @@
 package com.aaslin.EmployeeManagementSystemUsingSpringBoot.model;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,6 +45,9 @@ public class Payroll {
 	
 	@Column(nullable=false)
 	private String updatedBy;
+	
+	@UpdateTimestamp //hibernate automatically updates this whenever a new employee creates
+	private LocalDateTime updatedAt;
 
 	public int getPayrollId() {
 		return payrollId;

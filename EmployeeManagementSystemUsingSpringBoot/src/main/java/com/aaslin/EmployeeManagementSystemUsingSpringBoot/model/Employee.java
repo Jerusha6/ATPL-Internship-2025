@@ -1,6 +1,7 @@
 package com.aaslin.EmployeeManagementSystemUsingSpringBoot.model;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -41,7 +42,7 @@ public class Employee {
 	private String employeePassword;
 	
 	@Column(nullable=false)
-	private Date dateOfJoining;	
+	private LocalDate dateOfBirth;	
 	
 	private boolean isDeleted;
 	
@@ -109,15 +110,15 @@ public class Employee {
 		this.employeePassword = employeePassword;
 	}
 
-	public Date getDateOfJoining() {
-		return dateOfJoining;
+	public LocalDate getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setDateOfJoining(Date dateOfJoining) {
-		this.dateOfJoining = dateOfJoining;
+	public void setDateOfBirth(LocalDate dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
-	public boolean isDeleted() {
+	public boolean getIsDeleted() {
 		return isDeleted;
 	}
 
