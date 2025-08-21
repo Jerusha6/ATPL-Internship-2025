@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.authentication.PasswordEncoderParser;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -18,7 +17,7 @@ public class SecurityConfig{
 	@Bean
 	public InMemoryUserDetailsManager userDetailsService() {
 		UserDetails user = User.withUsername("Jerusha")
-				.password("{noop}admin")
+				.password("{noop}jerusha")
 				.roles("USER")
 				.build();
 
@@ -26,8 +25,9 @@ public class SecurityConfig{
 				.password("{noop}rani")
 				.roles("ADMIN")
 				.build();
-		return new InMemoryUserDetailsManager(admin);
+		return new InMemoryUserDetailsManager(admin,user);
 	}
+	
 	@Bean
 	public PasswordEncoder passwordEncoder(){
 		return new BCryptPasswordEncoder();
