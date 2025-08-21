@@ -4,15 +4,21 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aaslin.EmployeeManagementSystemUsingSpringBoot.service.EmployeeService;
+
+import jakarta.servlet.http.HttpSession;
+
 import com.aaslin.EmployeeManagementSystemUsingSpringBoot.dto.EmployeeDTO;
 import com.aaslin.EmployeeManagementSystemUsingSpringBoot.model.Employee;
 
@@ -23,48 +29,72 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 	
-	@GetMapping("/admin")
-	@ResponseBody
-	public List<EmployeeDTO> getEmployees(){
-		return employeeService.getEmployees();
+	@GetMapping("/addEmployee")
+	public String showAddEmployeePage(Model model) {
+	    model.addAttribute("employee", new Employee());
+	    return "AddEmployee"; 
 	}
 	
-	@GetMapping("/{id}")
-	@ResponseBody
-	public EmployeeDTO getEmployeeById(@PathVariable int id) {
-		return employeeService.getEmployeeById(id);
+	@GetMapping("/adminView")
+	public String adminView() {
+		return "AdminView";
 	}
+
+	
+	@GetMapping("/viewEmployee")
+	public String viewEmployeePage() {
+	    return "ViewEmployee";
+	}
+	
+	@PostMapping("/fetchEmployee")
+    public String viewEmployeeDetails(@RequestParam String empID, Model model) {
+        try {
+            EmployeeDTO employee = employeeService.getEmployeeById(empID);
+            model.addAttribute("employee", employee);
+        } catch (RuntimeException e) {
+            model.addAttribute("error", e.getMessage());
+        }
+        return "EmployeeDetails";
+    }
+	
+	@GetMapping("/admin")
+	public String getEmployees(Model model) {
+	    List<EmployeeDTO> employees = employeeService.getEmployees();
+	    model.addAttribute("employees", employees);
+	    return "Employees.html"; 
+	}
+	
+	
 	
 	@GetMapping("/admin/terminated")
-	@ResponseBody
-	public List<EmployeeDTO> getAllTerminatedEmployees(){
-		return employeeService.getAllTerminatedEmployees();
+	public String getAllTerminatedEmployees(){
+		List<EmployeeDTO> terminatedEmployees =  employeeService.getAllTerminatedEmployees();
+		return "TerminatedEmployees";
 	}
 	
-	@PostMapping("/admin/addEmployee")
-	@ResponseBody
-	public boolean addEmployee(@RequestBody Employee employee) {
-		 employeeService.addEmployee(employee);
-		 return true;
+	@PostMapping("/admin/add")
+	public String addEmployee(@ModelAttribute Employee employee, HttpSession session, Model model) {	
+		employeeService.addEmployee(employee, session, model);
+		 return "EmployeeSuccess";
 	}
 	
 	@PutMapping("/admin/updateEmployee/{id}")
 	@ResponseBody
-	public boolean updateEmployee(@PathVariable int id, @RequestBody Employee employee) {		
+	public boolean updateEmployee(@PathVariable String id, @RequestBody Employee employee) {		
 		employeeService.updateEmployee(id, employee);
 		return true;
 	}
 	
 	@PutMapping("/updatePassword/{id}")
 	@ResponseBody
-	public boolean updatePassword(@PathVariable int id, @RequestBody String password) {		
+	public boolean updatePassword(@PathVariable String id, @RequestBody String password) {		
 		employeeService.updatePassword(id, password);
 		return true;
 	}
 	
 	@PutMapping("/admin/terminateEmployee/{id}")
 	@ResponseBody
-	public String terminateEmployee(@PathVariable int id) {
+	public String terminateEmployee(@PathVariable String id) {
 		employeeService.terminateEmployee(id);
 		return "Employee terminated";
 	}

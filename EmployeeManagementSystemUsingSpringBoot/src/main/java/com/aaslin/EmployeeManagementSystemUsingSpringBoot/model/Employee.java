@@ -1,9 +1,7 @@
 package com.aaslin.EmployeeManagementSystemUsingSpringBoot.model;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,11 +10,10 @@ import org.hibernate.annotations.UpdateTimestamp;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 
@@ -25,9 +22,15 @@ import jakarta.validation.constraints.Email;
 public class Employee {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int employeeId;
+	@Column(unique=true)
+	private String employeeId;
 	
+	@PrePersist
+	public void generateId() {			
+		  String currentId = String.format("ATPL%04d",System.currentTimeMillis()%10000); //for unique Id everytime
+		  this.employeeId=currentId;
+	}
+		
 	@Column(nullable=false)
 	private String employeeName;
 	
@@ -68,11 +71,11 @@ public class Employee {
 	@OneToMany(mappedBy="employee", cascade=CascadeType.ALL)
 	private List<Payroll> payrolls;
 	
-	public int getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 
@@ -155,5 +158,4 @@ public class Employee {
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-	
 }

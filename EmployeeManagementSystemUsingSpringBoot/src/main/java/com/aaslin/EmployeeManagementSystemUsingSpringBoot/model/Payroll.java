@@ -56,6 +56,10 @@ public class Payroll {
 	public void setPayrollId(int payrollId) {
 		this.payrollId = payrollId;
 	}
+	
+	public LocalDateTime getUpdatedAt() {
+	    return updatedAt;
+	}
 
 	public Employee getEmployee() {
 		return employee;

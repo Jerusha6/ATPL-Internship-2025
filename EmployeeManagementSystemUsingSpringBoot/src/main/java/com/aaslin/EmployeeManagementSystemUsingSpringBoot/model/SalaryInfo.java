@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
 @Table(name="salary_jerusha")
 public class SalaryInfo {
 	@Id
-	private int employeeId;
+	private String employeeId;
 	
 	@Column(nullable=false)
 	private double baseSalary;
@@ -36,11 +36,11 @@ public class SalaryInfo {
 	@JoinColumn(name="employeeId", nullable=false, unique=true)
 	private Employee employee;
 
-	public int getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 

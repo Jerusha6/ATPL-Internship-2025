@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Access</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        a {
+            display: block;
+            margin: 15px auto;
+            padding: 12px 20px;
+            width: 250px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+
+        <a th:href="@{/employees/addEmployee}">Add Employee</a>
+        <a th:href="@{/employees/viewEmployee}">View Specific Employee</a>
+        <a th:href="@{/employees/admin}">View All Employees</a>
+        <a th:href="@{/employees/payrollSearch}">View Employee Payroll Reports</a>
+        <a th:href="@{/TerminateEmployee}">Terminate Employee</a>
+        <a th:href="@{/ViewTerminatedEmployees}">View Terminated Employees</a>
+        <a th:href="@{/EditPayroll}">Edit Employee Payroll</a>
+        <a th:href="@{/}">Go Back</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Payroll Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .info-message {
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        a.button:hover {
+            background-color: #45a049;
+        }
+
+        .center {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Payroll Report</h2>
+
+    <div th:if="${payrollList.isEmpty()}" class="info-message">
+        <p>No payroll records found for this employee.</p>
+    </div>
+
+    <table th:if="${!payrollList.isEmpty()}">
+        <thead>
+            <tr>
+                <th>Payroll Month</th>
+                <th>Base Salary</th>
+                <th>Bonus</th>
+                <th>Leave Count</th>
+                <th>Net Pay</th>
+                <th>Paid Date</th>
+                <th>Updated By</th>
+                <th>Updated At</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="payroll : ${payrollList}">
+                <td th:text="${payroll.payrollMonth}">Month</td>
+                <td th:text="${payroll.baseSalary}">Salary</td>
+                <td th:text="${payroll.bonus}">Bonus</td>
+                <td th:text="${payroll.leaveCount}">Leave</td>
+                <td th:text="${payroll.netPay}">Net</td>
+                <td th:text="${payroll.paidDate}">Date</td>
+                <td th:text="${payroll.updatedBy}">By</td>
+                <td th:text="${payroll.updatedAt}">At</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="center">
+        <a th:href="@{/employees/payrollSearch}" class="button">Search Again</a>
+       <a onclick="window.history.back(); return false;" class="button">Go back</a>
+    </div>    
+
+</body>
+</html>

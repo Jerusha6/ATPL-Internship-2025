@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+</head>
+<body>
+    <h1>Sign In</h1>
+    <form th:action="@{/portalControl}" method="post">
+        <label>Enter your employee ID</label>
+        <input type="text" name="empID" required><br><br>
+
+        <label>Enter your password</label>
+        <input type="password" name="password" required><br><br>
+
+        <input type="submit" value="Sign In"><br><br>
+
+        <a th:href="@{/}">Go back</a>
+    </form>
+</body>
+</html>

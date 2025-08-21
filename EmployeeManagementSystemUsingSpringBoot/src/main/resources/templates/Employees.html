@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Employees</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .table-card {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.08);
+            overflow-x: auto; 
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .btn-primary {
+            width: 100%;
+            background-color: #45a049; 
+        }
+
+        @media (max-width: 768px) {
+            .table-card {
+                padding: 15px 20px;
+            }
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="table-card">
+        <h2>Employee List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Designation</th>
+                    <th>Contact</th>
+                    <th>Date of Birth</th>
+                    <th>Created At</th>
+                    <th>Created By</th>
+                    <th>Updated At</th>
+                    <th>Updated By</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="emp : ${employees}">
+                    <td th:text="${emp.employeeId}"></td>
+                    <td th:text="${emp.employeeName}"></td>
+                    <td th:text="${emp.employeeEmail}"></td>
+                    <td th:text="${emp.employeeDesignation}"></td>
+                    <td th:text="${emp.contact}"></td>
+                    <td th:text="${emp.dateOfBirth}"></td>
+                    <td th:text="${emp.createdAt}"></td>
+                    <td th:text="${emp.createdBy}"></td>
+                    <td th:text="${emp.updatedAt}"></td>
+                    <td th:text="${emp.updatedBy}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   <div style="text-align: center;">
+    	<a onclick="window.history.back(); return false;" class="btn btm-primary">Go back</a>
+		</div>
+</body>
+</html>

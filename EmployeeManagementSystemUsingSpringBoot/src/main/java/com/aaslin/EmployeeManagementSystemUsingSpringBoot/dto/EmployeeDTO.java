@@ -1,11 +1,10 @@
 package com.aaslin.EmployeeManagementSystemUsingSpringBoot.dto;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class EmployeeDTO {
-    private int employeeId;
+    private String employeeId;
     private String employeeName;
     private String employeeEmail;
     private String employeeDesignation;
@@ -16,10 +15,9 @@ public class EmployeeDTO {
     private LocalDateTime updatedAt;
     private String updatedBy;
 
-public EmployeeDTO(int employeeId, String employeeName, String employeeEmail, String employeeDesignation,
+public EmployeeDTO(String employeeId, String employeeName, String employeeEmail, String employeeDesignation,
 			String contact, LocalDate dateOfBirth, LocalDateTime createdAt, String createdBy, LocalDateTime updatedAt,
-			String updatedBy) {
-	
+			String updatedBy) {		
     	this.employeeId=employeeId;
         this.employeeName = employeeName;
         this.employeeEmail = employeeEmail;
@@ -31,7 +29,7 @@ public EmployeeDTO(int employeeId, String employeeName, String employeeEmail, St
         this.updatedAt = updatedAt;
         this.updatedBy = updatedBy;
     }
-	public int getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
@@ -71,8 +69,8 @@ public EmployeeDTO(int employeeId, String employeeName, String employeeEmail, St
 		return updatedBy;
 	}
 
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
+	public void setEmployeeId(String string) {
+		this.employeeId = string;
 	}
 
 	public void setEmployeeName(String employeeName) {

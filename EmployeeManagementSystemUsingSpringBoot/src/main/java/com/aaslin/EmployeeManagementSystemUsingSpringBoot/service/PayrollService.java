@@ -17,8 +17,8 @@ public class PayrollService {
 		return payrollRepo.findAll();
 	}
 	
-	public List<Payroll> fetchPayrollById(int id) {
-		return payrollRepo.fetchPayrollById(id);
+	public List<Payroll> fetchPayrollById(String empId) {
+		return payrollRepo.fetchPayrollById(empId);
 	}
 	
 	public Payroll editPayroll(int id, Payroll payroll) {	
@@ -34,6 +34,17 @@ public class PayrollService {
 	    
 	    return payrollRepo.save(existingPayroll);
 	}
+
+	public Payroll savePayroll(Payroll payroll, String currentUser) {
+        payroll.setUpdatedBy(currentUser);
+        double netPay = payroll.getBaseSalary() + payroll.getBonus();
+        
+        netPay -= payroll.getLeaveCount() * 500;
+
+        payroll.setNetPay(netPay);
+
+        return payrollRepo.save(payroll);
+    }
 
 
 }

@@ -12,5 +12,5 @@ import com.aaslin.EmployeeManagementSystemUsingSpringBoot.model.Payroll;
 public interface PayrollRepository extends JpaRepository<Payroll, Integer>{
 	
 	@Query("Select p from Payroll p WHERE p.employee.employeeId= :employeeId")
-	public List<Payroll> fetchPayrollById(@Param("employeeId") int employeeId);
+	public List<Payroll> fetchPayrollById(@Param("employeeId") String employeeId);
 }
