@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+
+        div {
+            border: 1px solid rgba(0, 0, 0, 0.432);
+            width: 300px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Search Flight</h1>
+        <form action="/search">
+            <label>From: </label><br>
+            <input type="text"><br><br>
+            <label>To: </label><br>
+            <input type="text"><br><br>
+            <label>Departure Date: </label><br>
+            <input type="date"><br><br>
+            <label>Return Date: </label><br>
+            <input type="date"><br><br>
+            <label>Adults: </label><br>
+            <input type="number"><br><br>
+            <label>Children: </label><br>
+            <input type="number"><br><br>
+            <input type="reset">
+            <input type="submit" value="Search flight">
+        </form>
+    </div>
+</body>
+
+</html>
