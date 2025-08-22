@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi media</title>
+    <style>
+        .outer {
+            border: 1px solid rgba(236, 226, 226, 0.377);
+            border-radius: 5px;
+            width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+        }
+
+        .inner {
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        img,
+        video,
+        audio {
+            box-shadow: 1px 1px 12px 0.1px whitesmoke;
+        }
+
+        audio {
+            border-radius: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner"><img src="koyila.jpg" width="250px" alt="image"></div>
+
+        <div class="inner">
+            <video controls>
+                <source src="assemble.mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="inner">
+            <audio controls>
+                <source src="Koyila.mp3">
+                Your browser does not support the audio tag.
+            </audio>
+        </div>
+    </div>
+</body>
+
+</html>
