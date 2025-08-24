@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <style>
+
+        .outer {
+            min-height: 100vh;
+            overflow: auto;
+            padding: 40px;
+        }
+
+        .box {
+            float: left;
+            width: 200px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .box p {
+            margin: 8px 0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .box ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+
+        .box ul li {
+            padding: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="box">
+            <p>Basic</p>
+            <p>$9.99</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <p>Standard</p>
+            <p>$19.99</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <p>Premium</p>
+            <p>$29.99</p>
+            <ul>
+                <li>All Features</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
