@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerusha Rani</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgba(19, 19, 19, 0.85);
+            color: #222;
+        }
+
+        header {
+            text-align: center;
+            color: #ffffff;
+            padding: 25px;
+            background: #1f1e1eb7;
+            border-bottom: 3px solid rgba(0, 0, 0, 0.29);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        
+        header h3 {
+            margin: 8px;
+            font-weight: normal;
+            color: #d1c1b3;
+        }
+        
+        .body-class {
+            width: 100%;
+            text-align: justify;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .inner-box {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            width: 70%;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .inner-box h4 {
+            text-align: center;
+            color: #085bd7;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .inner-box p {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .project {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid rgba(199, 199, 199, 0.4);
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: justify;
+        }
+
+        .project:hover {
+            transform: scale(1.01);
+            background: #f0f4ff;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+            border-color: #085bd7;
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            transition: transform 0.25s;
+        }
+
+        img:hover {
+            transform: scale(1.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: #1f1e1eb7;
+            color: #f5f5f5;
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            border-top: 3px solid rgba(0, 0, 0, 0.29);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Jerusha Rani Tamiri</h1>
+        <h3>Java Developer</h3>
+    </header>
+
+    <div class="body-class">
+        <div class="inner-box">
+            <h4>About Me</h4>
+            <p>Hello there! I'm a passionate Java Developer with hands-on experience in building reliable, efficient,
+                and scalable applications. My expertise includes Java, Spring Framework, Spring Boot, and RESTful APIs,
+                along with a solid foundation in data structures and algorithms. I enjoy solving challenging problems,
+                exploring new technologies, and applying creative solutions to real-world projects. Beyond coding, I’m
+                self-motivated, curious, and always eager to learn and grow while contributing to impactful software
+                solutions.</p>
+        </div>
+
+        <div class="inner-box">
+            <h4>Projects</h4>
+            <div class="projects-container">
+                <div class="project">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive personal portfolio built with HTML, CSS to showcase my skills and
+                        projects.
+                    </p>
+                    <a href="https://github.com/Jerusha6"> View Project</a>
+                </div>
+                <div class="project">
+                    <h3>Employee payroll Management System</h3>
+                    <p>Java-based system with CRUD operations to manage employee's payroll, and bonus/leaves
+                        efficiently. Built with spring boot and spring data JPA for data retrivel and post.</p>
+                    <a href="https://github.com/Jerusha6/ATPL-Internship-2025/tree/springBoot/EmployeeManagementSystemUsingSpringBoot"> View Project</a>
+                </div>
+                <div class="project">
+                    <h3>AI Mock Interview using Gemini API</h3>
+                    <p>A online mock interview platform for students and even experienced persons to boost confidence before direct interview. Used Gemini API for dynamic questions and postgres SQL as a database.</p>
+                    <a href="https://github.com/Jerusha6/AI-INTERVIEW-MOCKER"> View Project</a>
+                </div>
+                <div class="project">
+                    <h3>Spam detection system</h3>
+                    <p>A real-time spam/ham detection system with Machine learning and Python. Built using random forest algorithm for better data classification.</p>
+                    <a href="https://github.com/Jerusha6/SpamSMSDetection"> View Project</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="inner-box">
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="https://github.com/Jerusha6"><img src="github.png" alt="github"></a></li>
+                <li><a href="https://www.linkedin.com/in/tamiri-jerusha-rani-25198a26a/"><img src="linkedIn.png"
+                            alt="linkedIn"></a></li>
+                <li><a href="mailto:jerusharanitamiri8663@gmail.com"><img src="email.png" alt="Email"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Jerusha Rani Tamiri | All rights reserved.
+    </footer>
+</body>
+
+</html>
