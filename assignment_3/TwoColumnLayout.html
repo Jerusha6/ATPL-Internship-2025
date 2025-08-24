@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Column Layout</title>
+    <style>
+        .outer {
+            width: 100%;
+            overflow: auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .inner1 {
+            box-sizing: border-box;
+            float: left;
+            width: 30%;
+            background-color: rgba(0, 0, 0, 0.071);
+            padding: 10px;
+        }
+
+        .inner2 {
+            box-sizing: border-box;
+            float: left;
+            width: 70%;
+            background-color: rgba(0, 0, 0, 0.205);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner1">
+            <p><b>Left Column</b></p>
+            <p>Content</p>
+        </div>
+        <div class="inner2">
+            <p><b>Right Column</b></p>
+            <p>Content</p>
+        </div>
+    </div>
+</body>
+
+</html>
