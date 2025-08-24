@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar Using Box Model</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(228, 223, 215, 0.502);
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.683);
+            padding: 10px 0;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        a:hover {
+            color: burlywood;
+        }
+
+        a:active {
+            color: rgb(39, 24, 4);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
