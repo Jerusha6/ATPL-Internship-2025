@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>View Employee</title>
-     <style>
+    <title>Search Payroll</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -15,7 +14,7 @@
             height: 100vh;
         }
 
-        h1 {
+        h2 {
             color: #333;
             margin-bottom: 25px;
         }
@@ -72,18 +71,17 @@
         }
     </style>
 </head>
-</head>
 <body>
     <div class="form-container">
-        <h1>Enter Employee ID</h1>
-        <form th:action="@{/employees/fetchEmployee}" method="post">
-            <label for="empID">Employee ID:</label>
-            <input type="text" id="empID" name="empID" required>
+        <h2>Add Employee Bonus/Leaves</h2>
+        <form th:action="@{/employees/payroll/add}" method="get">
+            <label for="id">Enter Employee ID:</label>
+            <input type="text" id="employeeId" name="employeeId" required>
+
             <div class="button-group">
-            	<input type="submit" value="View Details">
+                <input type="submit" value="Add Payroll">
                 <a href="#" onclick="window.history.back(); return false;" class="back">Go Back</a>
             </div>
-
         </form>
     </div>
 </body>

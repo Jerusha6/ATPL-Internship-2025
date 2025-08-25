@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Terminate Employee</title>
+    <style>
+        /* Your existing styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 40px;
+        }
+        .form-card {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #c0392b;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+         .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        
+        .back, button {
+            background-color: #c0392b;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        
+        .back {
+         text-align: center;
+         text-decoration: none;
+         background-color: #999;
+        }
+        
+        button:hover {
+            background-color: #a93226;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-card">
+        <h2>Terminate Employee</h2>
+        <form th:action="@{/employees/admin/terminateEmployee}" method="post">
+            <label for="employeeId">Employee ID</label>
+            <input type="text" id="employeeId" name="employeeId" placeholder="Enter Employee ID" required />
+                
+            <div class="button-group">
+                <button type="submit">Terminate</button>
+                <a href="#" onclick="window.history.back(); return false;" class="back">Go Back</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

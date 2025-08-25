@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>All Employees</title>
+    <title>Terminated Employees</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,13 +18,13 @@
             padding: 25px 30px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0,0,0,0.08);
-            overflow-x: auto; 
+            overflow-x: auto;
         }
 
         h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: #333;
+            color: #c0392b;
         }
 
         table {
@@ -41,7 +41,7 @@
         }
 
         th {
-            background-color: #4CAF50;
+            background-color: #e74c3c;
             color: white;
             font-weight: bold;
         }
@@ -62,12 +62,19 @@
         }
 
         .btn-primary {
-            background-color: #45a049;
+            background-color: #c0392b;
             color: white;
+        }
+        
+         .info-message {
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+            font-weight: bold;
         }
 
         .btn-primary:hover {
-            background-color: #3c8e3c;
+            background-color: #a93226;
         }
 
         @media (max-width: 768px) {
@@ -84,8 +91,13 @@
 </head>
 <body>
     <div class="table-card">
-        <h2>Employee List</h2>
-        <table>
+        <h2>Terminated Employees</h2>
+        
+         <div th:if="${terminatedEmployees.isEmpty()}" class="info-message">
+        <p>No terminated employee records found for this employee.</p>
+    </div>
+        
+        <table th:if="${!terminatedEmployees.isEmpty()}">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -94,31 +106,27 @@
                     <th>Designation</th>
                     <th>Contact</th>
                     <th>Date of Birth</th>
-                    <th>Created At</th>
-                    <th>Created By</th>
-                    <th>Updated At</th>
-                    <th>Updated By</th>
+                    <th>Terminated By</th>
+                    <th>Terminated At</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="emp : ${employees}">
+                <tr th:each="emp : ${terminatedEmployees}">
                     <td th:text="${emp.employeeId}"></td>
                     <td th:text="${emp.employeeName}"></td>
                     <td th:text="${emp.employeeEmail}"></td>
                     <td th:text="${emp.employeeDesignation}"></td>
                     <td th:text="${emp.contact}"></td>
                     <td th:text="${emp.dateOfBirth}"></td>
-                    <td th:text="${emp.createdAt}"></td>
-                    <td th:text="${emp.createdBy}"></td>
-                    <td th:text="${emp.updatedAt}"></td>
                     <td th:text="${emp.updatedBy}"></td>
+                    <td th:text="${emp.updatedAt}"></td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <div style="text-align: center;">
-        <a href="#" onclick="window.history.back(); return false;" class="btn btn-primary">Go back</a>
+        <a href="#" onclick="window.history.back(); return false;" class="btn btn-primary">Go Back</a>
     </div>
 </body>
 </html>

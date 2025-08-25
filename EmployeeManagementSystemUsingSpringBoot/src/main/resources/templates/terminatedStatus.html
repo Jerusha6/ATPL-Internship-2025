@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Termination Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 40px;
+            text-align: center;
+        }
+        .status-card {
+            max-width: 300px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            font-size: 1.2rem;
+        }
+        .success {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .error {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: #c0392b;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back {
+            color: #2980b9;
+            margin-top: 15px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="status-card">
+        <p th:text="${message}" th:classappend="${success} ? 'success' : 'error'"></p>
+        <a th:href="@{/employees/admin/terminateEmployeePage}">Terminate another Employee</a>
+        <a th:href="@{/employees/admin/terminated}">View Terminated employees</a>
+        <a th:href="@{/employees/adminView}" class="back">Go Back</a>
+    </div>
+</body>
+</html>

@@ -22,7 +22,7 @@ public class Payroll {
 	private int payrollId;
 	
 	@ManyToOne
-	@JoinColumn(name="employeeId", nullable=false, unique=true)
+	@JoinColumn(name="employeeId", nullable=false)
 	private Employee employee;
 	
 	@Column(nullable=false)

@@ -41,9 +41,9 @@ public class EmployeeController {
 	}
 
 	
-	@GetMapping("/viewEmployee")
-	public String viewEmployeePage() {
-	    return "ViewEmployee";
+	@GetMapping("/admin/terminateEmployeePage")
+	public String terminateEmployeePage() {
+	    return "terminateEmployee";
 	}
 	
 	@PostMapping("/fetchEmployee")
@@ -61,16 +61,17 @@ public class EmployeeController {
 	public String getEmployees(Model model) {
 	    List<EmployeeDTO> employees = employeeService.getEmployees();
 	    model.addAttribute("employees", employees);
-	    return "Employees.html"; 
+	    return "Employees"; 
 	}
-	
 	
 	
 	@GetMapping("/admin/terminated")
-	public String getAllTerminatedEmployees(){
-		List<EmployeeDTO> terminatedEmployees =  employeeService.getAllTerminatedEmployees();
-		return "TerminatedEmployees";
+	public String getAllTerminatedEmployees(Model model) {
+	    List<EmployeeDTO> terminatedEmployees = employeeService.getAllTerminatedEmployees();
+	    model.addAttribute("terminatedEmployees", terminatedEmployees);
+	    return "TerminatedEmployees";
 	}
+
 	
 	@PostMapping("/admin/add")
 	public String addEmployee(@ModelAttribute Employee employee, HttpSession session, Model model) {	
@@ -92,11 +93,18 @@ public class EmployeeController {
 		return true;
 	}
 	
-	@PutMapping("/admin/terminateEmployee/{id}")
-	@ResponseBody
-	public String terminateEmployee(@PathVariable String id) {
-		employeeService.terminateEmployee(id);
-		return "Employee terminated";
+	@PostMapping("/admin/terminateEmployee")
+	public String terminateEmployeeById(@RequestParam String employeeId, Model model) {
+	    try {
+	        employeeService.terminateEmployee(employeeId);
+	        model.addAttribute("message", "Employee with ID " + employeeId + " has been terminated successfully.");
+	        model.addAttribute("success", true);
+	    } catch (Exception e) {
+	        model.addAttribute("message", "Failed to terminate employee: " + e.getMessage());
+	        model.addAttribute("success", false);
+	    }
+	    return "terminatedStatus";
 	}
+
 	
 }

@@ -59,6 +59,11 @@ public class PayrollController {
         return "payrollSearch"; 
     }
 	
+	@GetMapping("/editPayroll")
+    public String toEditPayroll() {
+        return "ToEditPayroll"; 
+    }
+	
 	@PostMapping("/payroll/add")
     public String addPayroll(@ModelAttribute Payroll payroll, HttpSession session) {
         String currentUser = (String) session.getAttribute("username");
@@ -68,10 +73,10 @@ public class PayrollController {
         return "PayrollSuccess";
     }
 	
-	@PutMapping("/admin/editPayroll/{id}")
-	@ResponseBody
-	public Payroll editPayroll(@PathVariable int id, @RequestBody Payroll payroll) {
-		return service.editPayroll(id, payroll);
-	}
+//	@PutMapping("/admin/editPayroll/{id}")
+//	@ResponseBody
+//	public Payroll editPayroll(@PathVariable int id, @RequestBody Payroll payroll) {
+//		return service.editPayroll(id, payroll);
+//	}
 	
 }
