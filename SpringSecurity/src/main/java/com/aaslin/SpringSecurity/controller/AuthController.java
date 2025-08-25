@@ -1,18 +1,15 @@
 package com.aaslin.SpringSecurity.controller;
 
-import com.aaslin.SpringSecurity.Service.UserService;
-import com.aaslin.SpringSecurity.model.Users;
+import com.aaslin.SpringSecurity.Service.CustomUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AuthController {
 	@Autowired
-	UserService service;
+	CustomUserService service;
 	@GetMapping("/hello")
 	public String hello(Authentication auth) {
 		if(auth!=null) {
@@ -31,10 +28,10 @@ public class AuthController {
 		return "Hello "+ auth.getName()+"!, Here is your data:";
 	}
 
-	@PostMapping("/register")
-	public String register(@RequestBody Users user){
-		service.register(user);
-		return "registered";
-	}
+//	@PostMapping("/register")
+//	public String register(@RequestBody Users user){
+//		service.register(user);
+//		return "registered";
+//	}
 
 }

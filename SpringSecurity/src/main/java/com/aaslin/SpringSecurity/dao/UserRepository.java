@@ -1,4 +1,4 @@
-package com.aaslin.SpringSecurity.repository;
+package com.aaslin.SpringSecurity.dao;
 
 import java.util.Optional;
 

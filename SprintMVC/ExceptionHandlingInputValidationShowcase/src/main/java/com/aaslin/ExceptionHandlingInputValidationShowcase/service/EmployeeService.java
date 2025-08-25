@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.aaslin.ExceptionHandlingInputValidationShowcase.Exceptions.NotFoundException;
@@ -23,8 +22,8 @@ public class EmployeeService {
 
 	// To fetch single Employee by ID
 	public Employee getEmployee(int employeeId) {
-
-		if (employeeList.contains(employee.getEmployeeID())) {
+		
+		if (employeeList.contains(employeeId)) {
 
 			return employeeList.stream()
 					.filter(p -> p.getEmployeeID() == employeeId)
