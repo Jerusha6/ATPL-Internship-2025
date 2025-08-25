@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .card-container {
+            display: flex;
+            background-color: rgba(174, 176, 179, 0.301);
+            height: 300px;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card {
+            height: 150px;
+            width: 250px;
+            border-radius: 7px;
+            background-color: rgba(240, 248, 255, 0.959);
+            border: 1px solid rgba(240, 248, 255, 0.726);
+            box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        p {
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        .feature {
+            font-size: medium;
+        }
+
+        .price {
+            font-size: larger;
+            color: rgb(31, 116, 226);
+        }
+
+        button {
+            background-color: rgb(31, 116, 226);
+            border: rgba(7, 100, 221, 0.466);
+            width: 100px;
+            height: 30px;
+            color: aliceblue;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-container">
+        <div class="card">
+            <p class="feature">Basic</p>
+            <p class="price">$19/mo</p>
+            <button>Choose Plan</button>
+        </div>
+        <div class="card">
+            <p class="feature">Standard</p>
+            <p class="price">$39/mo</p>
+            <button>Choose Plan</button>
+        </div>
+        <div class="card">
+            <p class="feature">Premium</p>
+            <p class="price">$79/mo</p>
+            <button>Choose Plan</button>
+        </div>
+    </div>
+</body>
+
+</html>
