@@ -14,11 +14,13 @@
         }
 
         .card-container {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
             background-color: rgba(174, 176, 179, 0.301);
             height: 300px;
             width: 100%;
-            justify-content: space-around;
+            gap: 10px;
             align-items: center;
             text-align: center;
         }
