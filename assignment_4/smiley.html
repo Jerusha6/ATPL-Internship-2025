@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            background-color: rgb(251, 255, 0);
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+            border: 2px solid rgba(94, 93, 93, 0.068);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.719)
+        }
+
+        .eye {
+            position: absolute;
+            height: 90px;
+            width: 80px;
+            border-top: 44px solid;
+            border-radius: 50%;
+        }
+
+        .eye1 {
+            top: 100px;
+            left: 90px;
+        }
+
+        .eye2 {
+            top: 100px;
+            left: 220px;
+        }
+
+        .mouth {
+            border: 2px solid rgba(0, 0, 0, 0.616);
+            background-color: rgba(220, 20, 20, 0.719);
+            border-radius: 10px 10px 250px 250px;
+            height: 100px;
+        }
+
+        .mouth,
+        .teeth {
+            position: absolute;
+            width: 250px;
+            top: 240px;
+            left: 80px;
+        }
+
+        .teeth {
+            height: 25px;
+            top: 242px;
+            left: 81.5px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.664);
+            border-radius: 10px 10px 50px 50px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="eye eye1"></div>
+        <div class="eye eye2"></div>
+        <div class="mouth"></div>
+        <div class="teeth"></div>
+    </div>
+</body>
+
+</html>
