@@ -1,5 +1,6 @@
 package com.aaslin.JwtGeneration.AuthController;
 
+import com.aaslin.JwtGeneration.model.LoginRequest;
 import com.aaslin.JwtGeneration.model.UserEntity;
 import com.aaslin.JwtGeneration.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,14 @@ public class UserController {
         return ResponseEntity.ok("User Registered: " + user.getUsername());
     }
 
-//    @GetMapping("/checkCredentials")
-//    public ResponseEntity<String> loginUser() {
-//
-//    }
+    @GetMapping("/checkCredentials")
+    public ResponseEntity<String> loginUser(@RequestBody LoginRequest request) {
+        if(!service.checkCredentials(request)){
+            return ResponseEntity.ok("User not exist: " + request.getUsername());
+        }
+
+        else return ResponseEntity.ok("User exist in db: " + request.getUsername());
+
+    }
 
 }
