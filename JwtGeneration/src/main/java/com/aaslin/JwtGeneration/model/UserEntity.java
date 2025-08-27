@@ -18,12 +18,13 @@ import java.sql.Date;
 @Table(name="users_jerusha")
 public class UserEntity {
 
+
     @Id
-    String username;
+    private String username;
     @NotBlank(message = "Please provide your email")
-    String email;
-    String mobileNumber;
-    Date dob;
-    String designation;
-    String password;
+    private String email;
+    private String mobileNumber;
+    private Date dob;
+    private String designation;
+    private String password;
 }

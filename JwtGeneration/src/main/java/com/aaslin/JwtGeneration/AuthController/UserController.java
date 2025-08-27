@@ -1,21 +1,23 @@
 package com.aaslin.JwtGeneration.AuthController;
 
-import com.aaslin.JwtGeneration.model.LoginRequest;
+import com.aaslin.JwtGeneration.jwt.JwtService;
 import com.aaslin.JwtGeneration.model.UserEntity;
 import com.aaslin.JwtGeneration.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
 
     @Autowired
     private UserService service;
+
+    @Autowired
+    private JwtService jwtService;
+
     @GetMapping("/register")
     public String registerForm(){
         return "redirect:/register.html";
@@ -32,14 +34,16 @@ public class UserController {
         return ResponseEntity.ok("User Registered: " + user.getUsername());
     }
 
-    @GetMapping("/checkCredentials")
-    public ResponseEntity<String> loginUser(@RequestBody LoginRequest request) {
-        if(!service.checkCredentials(request)){
-            return ResponseEntity.ok("User not exist: " + request.getUsername());
+    @PostMapping("/checkCredentials")
+    public ResponseEntity<String> loginUser(@RequestParam String username, @RequestParam String password) {
+        if (service.checkCredentials(username, password)) {
+            // Generate JWT
+            String token = jwtService.generateToken(username);
+            return ResponseEntity.ok("JWT Token: " + token);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("Invalid credentials for user: " + username);
         }
-
-        else return ResponseEntity.ok("User exist in db: " + request.getUsername());
-
     }
 
 }
