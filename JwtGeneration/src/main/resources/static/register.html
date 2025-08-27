@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <style>
         * {
             margin: 0;
@@ -47,7 +50,8 @@
             gap: 20px;
         }
 
-        input, select {
+        input,
+        select {
             background-color: rgba(240, 248, 255, 0.938);
             padding: 9px;
             border: 1.4px solid rgba(113, 113, 113, 0.169);
@@ -55,7 +59,8 @@
             color: rgba(0, 0, 0, 0.582);
         }
 
-        input[type="submit"], a {
+        input[type="submit"],
+        a {
             background-color: rgb(11, 108, 156);
             color: aliceblue;
             border: none;
@@ -67,9 +72,16 @@
             text-align: center;
         }
 
-        input[type="submit"]:hover, a:hover {
+        input[type="submit"]:hover,
+
+        a:hover {
             box-shadow: 0 0px 9px rgb(165, 189, 201);
             border: 1px solid rgba(245, 245, 245, 0.377);
+        }
+
+        input[type="date"] {
+            width: 100%;
+            color: rgba(0, 0, 0, 0.582);
         }
     </style>
 </head>
@@ -81,7 +93,7 @@
             <input type="text" name="username" placeholder="Username" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="tel" name="mobileNumber" placeholder="Mobile Number" required>
-            <input type="date" name="dob" placeholder="Date Of Birth" required>
+            <input type="text" id="dob" name="dob" placeholder="Date Of Birth" required>
             <select name="designation">
                 <option value="Admin">Admin</option>
                 <option value="Hr">HR</option>
@@ -92,12 +104,28 @@
                 <option value="It Manager">It Manager</option>
                 <option value="Intern">Intern</option>
             </select>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="password" placeholder="Confirm Password" required>
-            <input type="submit" value="Sign In">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <input onclick="checkPassword()" type="submit" value="Register">
             <a href="index.html">Already Signed In?</a>
         </form>
     </div>
+    <script>
+        flatpickr("#dob", {
+            dateFormat: "Y-m-d"
+        });
+
+        function checkPassword() {
+            let password = document.getElementById("password").value;
+            let cPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== cPassword) {
+                alert("Passwords do not match!");
+            }
+        }
+
+    </script>
+
 </body>
 
 </html>

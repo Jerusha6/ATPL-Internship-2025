@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 public class UserService implements UserDetailsService {
@@ -37,8 +39,12 @@ public class UserService implements UserDetailsService {
     }
 
     public boolean checkCredentials(String username, String password) {
-       UserEntity userEntity = userRepository.findByUsername(username)
-               .orElseThrow(() -> new RuntimeException("User not found"));
-        return passwordEncoder.matches(password, userEntity.getPassword());
+        return userRepository.findByUsername(username)
+                .map(userEntity -> passwordEncoder.matches(password, userEntity.getPassword()))
+                .orElse(false);
+    }
+
+    public Optional<UserEntity> findUserByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 }

@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Controller
 public class UserController {
 
@@ -29,16 +31,24 @@ public class UserController {
     }
 
     @PostMapping("/registerUser")
-    public ResponseEntity<String> registerUser(@ModelAttribute UserEntity user) {
+    public String registerUser(@ModelAttribute UserEntity user) {
         service.registerUser(user);
-        return ResponseEntity.ok("User Registered: " + user.getUsername());
+        return "redirect:/index.html";
     }
 
     @PostMapping("/checkCredentials")
     public ResponseEntity<String> loginUser(@RequestParam String username, @RequestParam String password) {
+        Optional<UserEntity> userOpt = service.findUserByUsername(username);
+
+        if (userOpt.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("User not found: " + username);
+        }
+
         if (service.checkCredentials(username, password)) {
             // Generate JWT
             String token = jwtService.generateToken(username);
+
             return ResponseEntity.ok("JWT Token: " + token);
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
