@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form>
+        <h2>Even or Odd Checker</h2>
+        <label>Enter a number: </label>
+        <input type="number" id="num" required>
+        <input type="button" value="Check" onclick="displayResult()">
+        <p id="ResultArea"></p>
+    </form>
+    <script>
+        function displayResult() {
+            const num = parseFloat(document.getElementById("num").value);
+
+            let checkFloat = num * 10;
+
+            checkFloat %= 10;
+
+            if (checkFloat == 0) {
+                if (num % 2 == 0) {
+                    result = `${num} is Even`;
+                }
+                else {
+                    result = `${num} is Odd`;
+                }
+            }
+            else {
+                result = `${num} is neither even nor odd because it is not whole number`;
+            }
+            document.getElementById("ResultArea").innerText = `Result: ${result}`;
+        }
+
+    </script>
+</body>
+
+</html>
