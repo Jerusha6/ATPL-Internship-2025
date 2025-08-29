@@ -14,7 +14,7 @@ form {
     display: flex;
     border-radius: 5px;
     flex-direction: column;
-    padding: 20px;
+    padding: 30px;
     background-color: rgb(255, 255, 255);
     gap: 10px;
     box-shadow: 0 4px 6px rgb(0, 0, 0, 0.4);
@@ -36,4 +36,5 @@ input[type="button"] {
 h2 {
     text-align: center;
     color: rgb(10, 110, 240);
+    margin: 0;
 }
